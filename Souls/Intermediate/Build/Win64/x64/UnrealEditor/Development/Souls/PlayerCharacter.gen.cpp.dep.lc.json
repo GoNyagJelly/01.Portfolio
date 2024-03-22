@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\portfolio\\souls\\intermediate\\build\\win64\\unrealeditor\\inc\\souls\\uht\\playercharacter.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\soulseditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\souls\\definitions.souls.h",
+            "d:\\portfolio\\souls\\source\\souls\\player\\playercharacter.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "d:\\assortrock\\ue5.3.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "d:\\portfolio\\souls\\intermediate\\build\\win64\\unrealeditor\\inc\\souls\\uht\\playercharacter.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

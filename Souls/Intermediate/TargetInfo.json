@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Souls",
+			"Path": "..\\Source\\Souls.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SoulsEditor",
+			"Path": "..\\Source\\SoulsEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

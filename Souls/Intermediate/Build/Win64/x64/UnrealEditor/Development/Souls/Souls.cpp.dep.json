@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\portfolio\\souls\\source\\souls\\souls.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\soulseditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\souls\\definitions.souls.h",
+            "d:\\portfolio\\souls\\source\\souls\\souls.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Souls.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Souls.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SoulsEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Souls">
+      <UniqueIdentifier>{93E3D20F-8873-3312-A4B9-64B6AB6EFE69}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\GameInfo.cpp">
+      <Filter>Source\Souls</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\GameInfo.h">
+      <Filter>Source\Souls</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Souls\Souls.Build.cs">
+      <Filter>Source\Souls</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Souls\Souls.cpp">
+      <Filter>Source\Souls</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Souls.h">
+      <Filter>Source\Souls</Filter>
+    </ClInclude>
+    <Filter Include="Source\Souls\GameMode">
+      <UniqueIdentifier>{9989DB44-AF30-34ED-9165-AC0ACD24CC41}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\GameMode\MainGameModeBase.cpp">
+      <Filter>Source\Souls\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\GameMode\MainGameModeBase.h">
+      <Filter>Source\Souls\GameMode</Filter>
+    </ClInclude>
+    <Filter Include="Source\Souls\Player">
+      <UniqueIdentifier>{5D161AA4-C99C-39A7-A693-A6E2E8FADA73}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\Player\PlayerAnimInstance.cpp">
+      <Filter>Source\Souls\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Player\PlayerAnimInstance.h">
+      <Filter>Source\Souls\Player</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\Player\PlayerCharacter.cpp">
+      <Filter>Source\Souls\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Player\PlayerCharacter.h">
+      <Filter>Source\Souls\Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
