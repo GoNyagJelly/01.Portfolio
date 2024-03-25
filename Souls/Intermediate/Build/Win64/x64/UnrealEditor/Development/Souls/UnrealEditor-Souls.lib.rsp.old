@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-Souls.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\SoulsEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\SoulsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BasicInputDataConfig.gen.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\GameInfo.gen.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\MainGameModeBase.gen.cpp.obj"

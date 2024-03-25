@@ -38,6 +38,29 @@ void AMainPlayerController::OnMove(const FInputActionValue& InputActionValue)
 	const FVector ActionValue = InputActionValue.Get<FVector>();
 	ControlledPawn->AddMovementInput(ForwardVector, ActionValue.Y);
 	ControlledPawn->AddMovementInput(RightVector, ActionValue.X);
+
+	mMoveDir = ActionValue.X * 90.f;
+
+	if (ActionValue.Y > 0.f)
+	{
+		if (ActionValue.X < 0.f)
+			mMoveDir = -45.f;
+
+		else if (ActionValue.X > 0.f)
+			mMoveDir = 45.f;
+	}
+
+	else if (ActionValue.Y < 0.f)
+	{
+		if (ActionValue.X < 0.f)
+			mMoveDir = -135.f;
+
+		else if (ActionValue.X > 0.f)
+			mMoveDir = 135.f;
+
+		else
+			mMoveDir = 180.f;
+	}
 }
 
 void AMainPlayerController::OnTurn(const FInputActionValue& InputActionValue)
@@ -49,5 +72,5 @@ void AMainPlayerController::OnTurn(const FInputActionValue& InputActionValue)
 void AMainPlayerController::OnLookUp(const FInputActionValue& InputActionValue)
 {
 	const FVector ActionValue = InputActionValue.Get<FVector>();
-	AddPitchInput(ActionValue.Y);
+	AddPitchInput(ActionValue.X);
 }

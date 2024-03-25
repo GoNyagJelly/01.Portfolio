@@ -7,13 +7,13 @@
 #include "PlayerAnimInstance.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class SOULS_API UPlayerAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

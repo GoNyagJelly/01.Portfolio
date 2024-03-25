@@ -3,6 +3,7 @@
 
 #include "PlayerAnimInstance.h"
 #include "PlayerCharacter.h"
+#include "MainPlayerController.h"
 
 void UPlayerAnimInstance::NativeInitializeAnimation()
 {
@@ -13,17 +14,24 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
 
-	APlayerCharacter* OwnerPawn = Cast<APlayerCharacter>(TryGetPawnOwner());
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
 
-	if (IsValid(OwnerPawn))
+	if (IsValid(PlayerCharacter))
 	{
-		UCharacterMovementComponent* Movement = OwnerPawn->GetCharacterMovement();
+		UCharacterMovementComponent* Movement = PlayerCharacter->GetCharacterMovement();
 
 		if (IsValid(Movement))
 		{
 			mMoveSpeed = Movement->Velocity.Length();
 
 			mMoveSpeed /= Movement->MaxWalkSpeed;
+		}
+
+		AMainPlayerController* Controller = PlayerCharacter->GetController<AMainPlayerController>();
+
+		if (IsValid(Controller))
+		{
+			mMoveDir = Controller->GetMoveDir();
 		}
 	}
 }

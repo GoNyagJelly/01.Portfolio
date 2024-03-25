@@ -7,12 +7,21 @@
 #include "MainPlayerController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class SOULS_API AMainPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+
+private:
+	float mMoveDir;
+
+public:
+	float GetMoveDir()
+	{
+		return mMoveDir;
+	}
 
 protected:
 	virtual void BeginPlay() override;

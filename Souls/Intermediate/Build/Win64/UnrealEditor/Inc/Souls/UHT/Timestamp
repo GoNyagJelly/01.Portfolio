@@ -1,6 +1,6 @@
 D:\Portfolio\Souls\Source\Souls\GameInfo.h
+D:\Portfolio\Souls\Source\Souls\GameMode\MainGameModeBase.h
 D:\Portfolio\Souls\Source\Souls\Input\BasicInputDataConfig.h
-D:\Portfolio\Souls\Source\Souls\Player\PlayerCharacter.h
 D:\Portfolio\Souls\Source\Souls\Player\PlayerAnimInstance.h
 D:\Portfolio\Souls\Source\Souls\Player\MainPlayerController.h
-D:\Portfolio\Souls\Source\Souls\GameMode\MainGameModeBase.h
+D:\Portfolio\Souls\Source\Souls\Player\PlayerCharacter.h
