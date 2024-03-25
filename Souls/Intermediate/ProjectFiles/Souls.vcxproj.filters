@@ -54,9 +54,24 @@
     <ClInclude Include="..\..\Source\Souls\GameMode\MainGameModeBase.h">
       <Filter>Source\Souls\GameMode</Filter>
     </ClInclude>
+    <Filter Include="Source\Souls\Input">
+      <UniqueIdentifier>{5AE6DC03-0CB8-3330-BF9E-DD322CDAD370}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\Input\BasicInputDataConfig.cpp">
+      <Filter>Source\Souls\Input</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Input\BasicInputDataConfig.h">
+      <Filter>Source\Souls\Input</Filter>
+    </ClInclude>
     <Filter Include="Source\Souls\Player">
       <UniqueIdentifier>{5D161AA4-C99C-39A7-A693-A6E2E8FADA73}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Souls\Player\MainPlayerController.cpp">
+      <Filter>Source\Souls\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Player\MainPlayerController.h">
+      <Filter>Source\Souls\Player</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Souls\Player\PlayerAnimInstance.cpp">
       <Filter>Source\Souls\Player</Filter>
     </ClCompile>

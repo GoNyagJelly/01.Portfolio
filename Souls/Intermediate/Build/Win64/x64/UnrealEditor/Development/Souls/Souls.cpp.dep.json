@@ -1,14 +1,3 @@
-{
-    "Version": "1.2",
-    "Data": {
-        "Source": "d:\\portfolio\\souls\\source\\souls\\souls.cpp",
-        "ProvidedModule": "",
-        "PCH": "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\soulseditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
-        "Includes": [
-            "d:\\portfolio\\souls\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\souls\\definitions.souls.h",
-            "d:\\portfolio\\souls\\source\\souls\\souls.h"
-        ],
-        "ImportedModules": [],
-        "ImportedHeaderUnits": []
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:789f78f8ea8a35af4e52e50eb07f6ed13253cf57f4a9a8cfc679c3c8b38174d2
+size 577

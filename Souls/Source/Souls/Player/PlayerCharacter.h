@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "../GameInfo.h"
 #include "GameFramework/Character.h"
 #include "PlayerCharacter.generated.h"
 
@@ -14,6 +14,13 @@ class SOULS_API APlayerCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
+
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UCameraComponent* mCamera;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	USpringArmComponent* mCameraArm;
 
 protected:
 	// Called when the game starts or when spawned

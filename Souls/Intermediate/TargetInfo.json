@@ -1,14 +1,3 @@
-{
-	"Targets": [
-		{
-			"Name": "Souls",
-			"Path": "..\\Source\\Souls.Target.cs",
-			"Type": "Game"
-		},
-		{
-			"Name": "SoulsEditor",
-			"Path": "..\\Source\\SoulsEditor.Target.cs",
-			"Type": "Editor"
-		}
-	]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f381d9a8dc6261d890a31c2a24003b1293730178d9a0556b3e09fefd6d165f7b
+size 224
