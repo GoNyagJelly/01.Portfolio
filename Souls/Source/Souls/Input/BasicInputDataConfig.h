@@ -19,4 +19,6 @@ public:
 	UInputAction* Move = nullptr;
 	UInputAction* Turn = nullptr;
 	UInputAction* LookUp = nullptr;
+	UInputAction* NormalAttack = nullptr;
+	UInputAction* PowerAttack = nullptr;
 };

@@ -10,6 +10,12 @@ void UPlayerAnimInstance::NativeInitializeAnimation()
 	Super::NativeInitializeAnimation();
 }
 
+UPlayerAnimInstance::UPlayerAnimInstance()
+{
+	mNormalAttackIndex = 0;
+	mNormalAttackEnable = true;
+}
+
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
@@ -34,4 +40,37 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			mMoveDir = Controller->GetMoveDir();
 		}
 	}
+}
+
+void UPlayerAnimInstance::PlayNormalAttackMontage()
+{
+	if (!mNormalAttackEnable)
+		return;
+
+	mNormalAttackEnable = false;
+
+	if (!Montage_IsPlaying(mNormalAttackMontageArray[mNormalAttackIndex]))
+	{
+		Montage_SetPosition(mNormalAttackMontageArray[mNormalAttackIndex], 0.f);
+
+		Montage_Play(mNormalAttackMontageArray[mNormalAttackIndex]);
+
+		mNormalAttackIndex = (mNormalAttackIndex + 1) % mNormalAttackMontageArray.Num();
+
+	}
+}
+
+void UPlayerAnimInstance::AnimNotify_NormalAttack()
+{
+}
+
+void UPlayerAnimInstance::AnimNotify_NormalAttackEnable()
+{
+	mNormalAttackEnable = true;
+}
+
+void UPlayerAnimInstance::AnimNotify_NormalAttackEnd()
+{
+	mNormalAttackEnable = true;
+	mNormalAttackIndex = 0;
 }

@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UPlayerAnimInstance(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UPlayerAnimInstance(UPlayerAnimInstance&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UPlayerAnimInstance); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UPlayerAnimInstance); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UPlayerAnimInstance) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UPlayerAnimInstance) \
 	NO_API virtual ~UPlayerAnimInstance();
 
 

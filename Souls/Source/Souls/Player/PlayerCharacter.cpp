@@ -33,6 +33,7 @@ void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	mAnimInst = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
 }
 
 // Called every frame
@@ -47,5 +48,10 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void APlayerCharacter::PlayNormalAtaackMontage()
+{
+	mAnimInst->PlayNormalAttackMontage();
 }
 

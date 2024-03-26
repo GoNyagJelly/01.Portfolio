@@ -3,6 +3,7 @@
 
 #include "MainPlayerController.h"
 #include "../Input/BasicInputDataConfig.h"
+#include "PlayerCharacter.h"
 
 void AMainPlayerController::BeginPlay()
 {
@@ -24,6 +25,8 @@ void AMainPlayerController::SetupInputComponent()
 	EnhancedInputComponent->BindAction(MainInputDataConfig->Move, ETriggerEvent::Triggered, this, &ThisClass::OnMove);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->Turn, ETriggerEvent::Triggered, this, &ThisClass::OnTurn);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->LookUp, ETriggerEvent::Triggered, this, &ThisClass::OnLookUp);
+	EnhancedInputComponent->BindAction(MainInputDataConfig->NormalAttack, ETriggerEvent::Triggered, this, &ThisClass::OnNormalAttack);
+	EnhancedInputComponent->BindAction(MainInputDataConfig->PowerAttack, ETriggerEvent::Triggered, this, &ThisClass::OnPowerAttack);
 }
 
 void AMainPlayerController::OnMove(const FInputActionValue& InputActionValue)
@@ -73,4 +76,15 @@ void AMainPlayerController::OnLookUp(const FInputActionValue& InputActionValue)
 {
 	const FVector ActionValue = InputActionValue.Get<FVector>();
 	AddPitchInput(ActionValue.X);
+}
+
+void AMainPlayerController::OnNormalAttack(const FInputActionValue& InputActionValue)
+{
+	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
+
+	ControlledPawn->PlayNormalAtaackMontage();
+}
+
+void AMainPlayerController::OnPowerAttack(const FInputActionValue& InputActionValue)
+{
 }

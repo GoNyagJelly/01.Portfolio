@@ -10,6 +10,7 @@ UMainInputDataConfig::UMainInputDataConfig()
 			DefaultContext = Asset.Object;
 		}
 	}
+
 	{
 		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
 		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_Move.IA_Move'") };
@@ -18,6 +19,7 @@ UMainInputDataConfig::UMainInputDataConfig()
 			Move = Asset.Object;
 		}
 	}
+
 	{
 		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
 		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_Turn.IA_Turn'") };
@@ -26,12 +28,31 @@ UMainInputDataConfig::UMainInputDataConfig()
 			Turn = Asset.Object;
 		}
 	}
+
 	{
 		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
 		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_LookUp.IA_LookUp'") };
 		if (Asset.Succeeded())
 		{
 			LookUp = Asset.Object;
+		}
+	}
+
+	{
+		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
+		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_NormalAttack.IA_NormalAttack'") };
+		if (Asset.Succeeded())
+		{
+			NormalAttack = Asset.Object;
+		}
+	}
+
+	{
+		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
+		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_PowerAttack.IA_PowerAttack'") };
+		if (Asset.Succeeded())
+		{
+			PowerAttack = Asset.Object;
 		}
 	}
 }

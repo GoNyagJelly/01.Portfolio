@@ -8,7 +8,16 @@ public class Souls : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG", "EnhancedInput", "AIModule", "LevelSequence", "MovieScene", "MediaAssets" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject"
+			, "Engine"
+			, "InputCore"
+			, "UMG"
+			, "EnhancedInput"
+			/*, "AIModule"
+			, "LevelSequence"
+			, "MovieScene"
+			, "MediaAssets" */
+		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

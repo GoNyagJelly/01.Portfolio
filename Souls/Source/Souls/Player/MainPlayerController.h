@@ -31,4 +31,6 @@ protected:
 	void OnMove(const FInputActionValue& InputActionValue);
 	void OnTurn(const FInputActionValue& InputActionValue);
 	void OnLookUp(const FInputActionValue& InputActionValue);
+	void OnNormalAttack(const FInputActionValue& InputActionValue);
+	void OnPowerAttack(const FInputActionValue& InputActionValue);
 };
