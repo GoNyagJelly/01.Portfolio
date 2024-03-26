@@ -17,7 +17,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_SPARSE_DATA
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execAnimNotify_PowerAttackEnd); \
+	DECLARE_FUNCTION(execAnimNotify_PowerAttack); \
+	DECLARE_FUNCTION(execAnimNotify_PowerAttackStart); \
+	DECLARE_FUNCTION(execAnimNotify_NormalAttackEnd); \
+	DECLARE_FUNCTION(execAnimNotify_NormalAttackEnable); \
+	DECLARE_FUNCTION(execAnimNotify_NormalAttack);
+
+
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_ACCESSORS
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_15_INCLASS_NO_PURE_DECLS \
 private: \

@@ -15,12 +15,20 @@ class SOULS_API AMainPlayerController : public APlayerController
 	GENERATED_BODY()
 
 private:
-	float mMoveDir;
+	float	mMoveDir;
+
+public:
+	bool	mMoveEnable = true;
 
 public:
 	float GetMoveDir()
 	{
 		return mMoveDir;
+	}
+
+	bool GetMoveEnable()
+	{
+		return mMoveEnable;
 	}
 
 protected:

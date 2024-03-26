@@ -50,8 +50,13 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 }
 
-void APlayerCharacter::PlayNormalAtaackMontage()
+void APlayerCharacter::PlayNormalAttackMontage()
 {
 	mAnimInst->PlayNormalAttackMontage();
+}
+
+void APlayerCharacter::PlayPowerAttackMontage()
+{
+	mAnimInst->PlayPowerAttackMontage();
 }
 

@@ -28,7 +28,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TObjectPtr<UAnimMontage>>	mPowerAttackMontageArray;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool	mMoveEnable;
+
 	int32	mNormalAttackIndex;
+	int32	mPowerAttackIndex;
 
 	bool	mNormalAttackEnable;
 
@@ -41,8 +45,23 @@ public:
 
 public:
 	void PlayNormalAttackMontage();
+	void PlayPowerAttackMontage();
 
+	UFUNCTION()
 	void AnimNotify_NormalAttack();
+	
+	UFUNCTION()
 	void AnimNotify_NormalAttackEnable();
+	
+	UFUNCTION()
 	void AnimNotify_NormalAttackEnd();
+
+	UFUNCTION()
+	void AnimNotify_PowerAttackStart();
+
+	UFUNCTION()
+	void AnimNotify_PowerAttack();
+
+	UFUNCTION()
+	void AnimNotify_PowerAttackEnd();
 };

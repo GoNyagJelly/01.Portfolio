@@ -31,38 +31,41 @@ void AMainPlayerController::SetupInputComponent()
 
 void AMainPlayerController::OnMove(const FInputActionValue& InputActionValue)
 {
-	APawn* ControlledPawn = GetPawn();
-
-	const FRotator Rotation = K2_GetActorRotation();
-	const FRotator YawRotation = FRotator(0.0, Rotation.Yaw, 0.0);
-	const FVector ForwardVector = YawRotation.Vector();
-	const FVector RightVector = FRotationMatrix(YawRotation).GetScaledAxis(EAxis::Y);
-
-	const FVector ActionValue = InputActionValue.Get<FVector>();
-	ControlledPawn->AddMovementInput(ForwardVector, ActionValue.Y);
-	ControlledPawn->AddMovementInput(RightVector, ActionValue.X);
-
-	mMoveDir = ActionValue.X * 90.f;
-
-	if (ActionValue.Y > 0.f)
+	if (mMoveEnable)
 	{
-		if (ActionValue.X < 0.f)
-			mMoveDir = -45.f;
+		APawn* ControlledPawn = GetPawn();
 
-		else if (ActionValue.X > 0.f)
-			mMoveDir = 45.f;
-	}
+		const FRotator Rotation = K2_GetActorRotation();
+		const FRotator YawRotation = FRotator(0.0, Rotation.Yaw, 0.0);
+		const FVector ForwardVector = YawRotation.Vector();
+		const FVector RightVector = FRotationMatrix(YawRotation).GetScaledAxis(EAxis::Y);
 
-	else if (ActionValue.Y < 0.f)
-	{
-		if (ActionValue.X < 0.f)
-			mMoveDir = -135.f;
+		const FVector ActionValue = InputActionValue.Get<FVector>();
+		ControlledPawn->AddMovementInput(ForwardVector, ActionValue.Y);
+		ControlledPawn->AddMovementInput(RightVector, ActionValue.X);
 
-		else if (ActionValue.X > 0.f)
-			mMoveDir = 135.f;
+		mMoveDir = ActionValue.X * 90.f;
 
-		else
-			mMoveDir = 180.f;
+		if (ActionValue.Y > 0.f)
+		{
+			if (ActionValue.X < 0.f)
+				mMoveDir = -45.f;
+
+			else if (ActionValue.X > 0.f)
+				mMoveDir = 45.f;
+		}
+
+		else if (ActionValue.Y < 0.f)
+		{
+			if (ActionValue.X < 0.f)
+				mMoveDir = -135.f;
+
+			else if (ActionValue.X > 0.f)
+				mMoveDir = 135.f;
+
+			else
+				mMoveDir = 180.f;
+		}
 	}
 }
 
@@ -82,9 +85,12 @@ void AMainPlayerController::OnNormalAttack(const FInputActionValue& InputActionV
 {
 	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
 
-	ControlledPawn->PlayNormalAtaackMontage();
+	ControlledPawn->PlayNormalAttackMontage();
 }
 
 void AMainPlayerController::OnPowerAttack(const FInputActionValue& InputActionValue)
 {
+	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
+
+	ControlledPawn->PlayPowerAttackMontage();
 }

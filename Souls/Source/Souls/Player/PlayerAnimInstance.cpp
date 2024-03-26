@@ -14,6 +14,8 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 {
 	mNormalAttackIndex = 0;
 	mNormalAttackEnable = true;
+
+	mPowerAttackIndex = 0;
 }
 
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -73,4 +75,35 @@ void UPlayerAnimInstance::AnimNotify_NormalAttackEnd()
 {
 	mNormalAttackEnable = true;
 	mNormalAttackIndex = 0;
+}
+
+void UPlayerAnimInstance::PlayPowerAttackMontage()
+{
+	Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
+}
+
+void UPlayerAnimInstance::AnimNotify_PowerAttack()
+{
+}
+
+void UPlayerAnimInstance::AnimNotify_PowerAttackStart()
+{
+	mNormalAttackEnable = false;
+
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
+	if (IsValid(PlayerCharacter))
+	{
+		AMainPlayerController* Controller = PlayerCharacter->GetController<AMainPlayerController>();
+		if (IsValid(Controller))
+		{
+			mMoveEnable = Controller->GetMoveEnable();
+		}
+	}
+}
+
+void UPlayerAnimInstance::AnimNotify_PowerAttackEnd()
+{
+	mNormalAttackIndex = 0;
+	mNormalAttackEnable = true;
+	mMoveEnable = true;
 }

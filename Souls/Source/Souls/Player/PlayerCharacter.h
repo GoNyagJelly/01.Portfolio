@@ -36,5 +36,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
-	void PlayNormalAtaackMontage();
+	void PlayNormalAttackMontage();
+	void PlayPowerAttackMontage();
 };
