@@ -48,16 +48,14 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 				mAnimType = EPlayerAnimType::Fall;
 			}
 
-			// 만약 기본 상태가 아니라면 공격 상태를 비활성화 한다.
 			if (mAnimType != EPlayerAnimType::Default)
 			{
-				mAttackEnable = false;
+				mNormalAttackEnable = false;
 			}
 
-			// 땅을 밟았는데 상태가 Fall 상태일 경우 다 떨어졌다는 것이다.
 			if (mOnGround && mAnimType == EPlayerAnimType::Fall)
 			{
-				mAttackEnable = true;
+				mNormalAttackEnable = true;
 			}
 		}
 
@@ -106,7 +104,16 @@ void UPlayerAnimInstance::AnimNotify_NormalAttackEnd()
 
 void UPlayerAnimInstance::PlayPowerAttackMontage()
 {
-	Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
+	if (!Montage_IsPlaying(mPowerAttackMontageArray[mPowerAttackIndex]))
+	{
+		Montage_SetPosition(mPowerAttackMontageArray[mPowerAttackIndex], 0.f);
+
+		Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
+
+		mAnimType = EPlayerAnimType::PowerAttack;
+
+		mNormalAttackEnable = true;
+	}
 }
 
 void UPlayerAnimInstance::PlayJump()
@@ -115,7 +122,6 @@ void UPlayerAnimInstance::PlayJump()
 
 	mAnimType = EPlayerAnimType::Jump;
 
-	// 점프 리커버리 몽타주가 재생되고 있다면 재생을 중지한다.
 	if (Montage_IsPlaying(mJumpRecoveryAdditiveMontage))
 	{
 		Montage_Stop(0.1f, mJumpRecoveryAdditiveMontage);
@@ -129,16 +135,57 @@ void UPlayerAnimInstance::AnimNotify_PowerAttack()
 
 void UPlayerAnimInstance::AnimNotify_PowerAttackStart()
 {
-	mNormalAttackEnable = false;
-	//AMainPlayerController* Controller = Cast<AMainPlayerController>(TryGetPawnOwner());
-	//if (IsValid(Controller))
-	//{
-	//	mMoveEnable = Controller->GetMoveEnable();
-	//}
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = false;
+	}
 }
 
 void UPlayerAnimInstance::AnimNotify_PowerAttackEnd()
 {
-	mNormalAttackIndex = 0;
+	mAnimType = EPlayerAnimType::Default;
+
 	mNormalAttackEnable = true;
+	mNormalAttackIndex = 0;
+
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = true;
+	}
+
+
+}
+
+void UPlayerAnimInstance::AnimNotify_TransitionFall()
+{
+	mAnimType = EPlayerAnimType::Fall;
+}
+
+void UPlayerAnimInstance::AnimNotify_FallEnd()
+{
+	mAnimType = EPlayerAnimType::Default;
+
+	mAdditiveAlpha = 1.f;
+
+	if (!Montage_IsPlaying(mJumpRecoveryAdditiveMontage))
+	{
+		Montage_SetPosition(mJumpRecoveryAdditiveMontage, 0.f);
+
+		Montage_Play(mJumpRecoveryAdditiveMontage);
+	}
+
+	mCanJump = true;
+
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = true;
+	}
+}
+
+void UPlayerAnimInstance::AnimNotify_JumpRecoveryEnd()
+{
+	mAdditiveAlpha = 0.f;
 }

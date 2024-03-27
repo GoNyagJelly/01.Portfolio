@@ -14,11 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SOULS_PlayerAnimInstance_generated_h
 
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_SPARSE_DATA
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_SPARSE_DATA
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execAnimNotify_JumpRecoveryEnd); \
+	DECLARE_FUNCTION(execAnimNotify_FallEnd); \
+	DECLARE_FUNCTION(execAnimNotify_TransitionFall); \
 	DECLARE_FUNCTION(execAnimNotify_PowerAttackEnd); \
 	DECLARE_FUNCTION(execAnimNotify_PowerAttack); \
 	DECLARE_FUNCTION(execAnimNotify_PowerAttackStart); \
@@ -27,8 +30,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execAnimNotify_NormalAttack);
 
 
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_ACCESSORS
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_INCLASS_NO_PURE_DECLS \
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_ACCESSORS
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPlayerAnimInstance(); \
 	friend struct Z_Construct_UClass_UPlayerAnimInstance_Statics; \
@@ -37,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(UPlayerAnimInstance)
 
 
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_ENHANCED_CONSTRUCTORS \
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UPlayerAnimInstance(UPlayerAnimInstance&&); \
@@ -49,17 +52,17 @@ public: \
 	NO_API virtual ~UPlayerAnimInstance();
 
 
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_22_PROLOG
-#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_GENERATED_BODY \
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_23_PROLOG
+#define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_SPARSE_DATA \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_ACCESSORS \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_INCLASS_NO_PURE_DECLS \
-	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_25_ENHANCED_CONSTRUCTORS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_SPARSE_DATA \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_ACCESSORS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_INCLASS_NO_PURE_DECLS \
+	FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_26_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -75,7 +78,7 @@ template<> SOULS_API UClass* StaticClass<class UPlayerAnimInstance>();
 	op(EPlayerAnimType::Jump) \
 	op(EPlayerAnimType::Fall) \
 	op(EPlayerAnimType::Death) \
-	op(EPlayerAnimType::Skill) 
+	op(EPlayerAnimType::PowerAttack) 
 
 enum class EPlayerAnimType : uint8;
 template<> struct TIsUEnumClass<EPlayerAnimType> { enum { Value = true }; };

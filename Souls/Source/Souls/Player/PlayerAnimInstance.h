@@ -4,6 +4,7 @@
 
 #include "../GameInfo.h"
 #include "Animation/AnimInstance.h"
+#include "MainPlayerController.h"
 #include "PlayerAnimInstance.generated.h"
 
 UENUM(BlueprintType)
@@ -13,7 +14,7 @@ enum class EPlayerAnimType : uint8
 	Jump,
 	Fall,
 	Death,
-	Skill
+	PowerAttack
 };
 
 /**
@@ -37,9 +38,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TObjectPtr<UAnimMontage>>	mPowerAttackMontageArray;
-
-	/*UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool	mMoveEnable;*/
 
 	int32	mNormalAttackIndex;
 	int32	mPowerAttackIndex;
@@ -95,4 +93,13 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_PowerAttackEnd();
+
+	UFUNCTION()
+	void AnimNotify_TransitionFall();
+
+	UFUNCTION()
+	void AnimNotify_FallEnd();
+
+	UFUNCTION()
+	void AnimNotify_JumpRecoveryEnd();
 };
