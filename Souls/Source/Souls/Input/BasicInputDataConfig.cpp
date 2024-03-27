@@ -64,4 +64,13 @@ UMainInputDataConfig::UMainInputDataConfig()
 			Jump = Asset.Object;
 		}
 	}
+
+	{
+		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
+		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_Roll.IA_Roll'") };
+		if (Asset.Succeeded())
+		{
+			Roll = Asset.Object;
+		}
+	}
 }

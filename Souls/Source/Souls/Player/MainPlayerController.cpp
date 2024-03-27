@@ -33,6 +33,7 @@ void AMainPlayerController::SetupInputComponent()
 	EnhancedInputComponent->BindAction(MainInputDataConfig->NormalAttack, ETriggerEvent::Triggered, this, &ThisClass::OnNormalAttack);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->PowerAttack, ETriggerEvent::Triggered, this, &ThisClass::OnPowerAttack);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->Jump, ETriggerEvent::Triggered, this, &ThisClass::OnJump);
+	EnhancedInputComponent->BindAction(MainInputDataConfig->Roll, ETriggerEvent::Triggered, this, &ThisClass::OnRoll);
 }
 
 void AMainPlayerController::OnMove(const FInputActionValue& InputActionValue)
@@ -99,6 +100,13 @@ void AMainPlayerController::OnJump(const FInputActionValue& InputActionValue)
 	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
 
 	ControlledPawn->PlayJump();
+}
+
+void AMainPlayerController::OnRoll(const FInputActionValue& InputActionValue)
+{
+	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
+
+	ControlledPawn->PlayRollMontage();
 }
 
 void AMainPlayerController::OnPowerAttack(const FInputActionValue& InputActionValue)

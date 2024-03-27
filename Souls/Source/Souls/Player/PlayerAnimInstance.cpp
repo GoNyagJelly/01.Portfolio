@@ -129,6 +129,18 @@ void UPlayerAnimInstance::PlayJump()
 	}
 }
 
+void UPlayerAnimInstance::PlayRollMontage()
+{
+	if (!Montage_IsPlaying(mPowerAttackMontageArray[mPowerAttackIndex]))
+	{
+		Montage_SetPosition(mPowerAttackMontageArray[mPowerAttackIndex], 0.f);
+
+		Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
+
+		mAnimType = EPlayerAnimType::Roll;
+	}
+}
+
 void UPlayerAnimInstance::AnimNotify_PowerAttack()
 {
 }

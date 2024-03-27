@@ -14,7 +14,8 @@ enum class EPlayerAnimType : uint8
 	Jump,
 	Fall,
 	Death,
-	PowerAttack
+	PowerAttack,
+	Roll
 };
 
 /**
@@ -38,6 +39,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TObjectPtr<UAnimMontage>>	mPowerAttackMontageArray;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<TObjectPtr<UAnimMontage>>	mRollMontageArray;
 
 	int32	mNormalAttackIndex;
 	int32	mPowerAttackIndex;
@@ -75,6 +79,7 @@ public:
 	void PlayNormalAttackMontage();
 	void PlayPowerAttackMontage();
 	void PlayJump();
+	void PlayRollMontage();
 
 	UFUNCTION()
 	void AnimNotify_NormalAttack();

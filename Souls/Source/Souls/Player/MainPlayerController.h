@@ -40,4 +40,5 @@ protected:
 	void OnNormalAttack(const FInputActionValue& InputActionValue);
 	void OnPowerAttack(const FInputActionValue& InputActionValue);
 	void OnJump(const FInputActionValue& InputActionValue);
+	void OnRoll(const FInputActionValue& InputActionValue);
 };

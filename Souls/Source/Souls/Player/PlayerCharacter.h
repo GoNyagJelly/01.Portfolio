@@ -39,4 +39,5 @@ public:
 	void PlayNormalAttackMontage();
 	void PlayPowerAttackMontage();
 	void PlayJump();
+	void PlayRollMontage();
 };

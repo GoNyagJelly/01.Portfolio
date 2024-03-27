@@ -22,4 +22,5 @@ public:
 	UInputAction* NormalAttack = nullptr;
 	UInputAction* PowerAttack = nullptr;
 	UInputAction* Jump = nullptr;
+	UInputAction* Roll = nullptr;
 };

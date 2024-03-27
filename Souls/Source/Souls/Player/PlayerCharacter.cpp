@@ -69,3 +69,8 @@ void APlayerCharacter::PlayJump()
 	}
 }
 
+void APlayerCharacter::PlayRollMontage()
+{
+	mAnimInst->PlayRollMontage();
+}
+
