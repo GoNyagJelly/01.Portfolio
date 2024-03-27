@@ -76,7 +76,6 @@ void EmptyLinkFunctionForGeneratedCodeMainPlayerController() {}
 	{
 		return AMainPlayerController::StaticClass();
 	}
-	AMainPlayerController::AMainPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMainPlayerController);
 	AMainPlayerController::~AMainPlayerController() {}
 	struct Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_MainPlayerController_h_Statics

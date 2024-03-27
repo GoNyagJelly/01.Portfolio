@@ -55,4 +55,13 @@ UMainInputDataConfig::UMainInputDataConfig()
 			PowerAttack = Asset.Object;
 		}
 	}
+
+	{
+		static ConstructorHelpers::FObjectFinder<UInputAction> Asset
+		{ TEXT("/Script/EnhancedInput.InputAction'/Game/Blueprint/Main/Input/IA_Jump.IA_Jump'") };
+		if (Asset.Succeeded())
+		{
+			Jump = Asset.Object;
+		}
+	}
 }

@@ -6,6 +6,16 @@
 #include "Animation/AnimInstance.h"
 #include "PlayerAnimInstance.generated.h"
 
+UENUM(BlueprintType)
+enum class EPlayerAnimType : uint8
+{
+	Default,
+	Jump,
+	Fall,
+	Death,
+	Skill
+};
+
 /**
  *
  */
@@ -28,16 +38,36 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TObjectPtr<UAnimMontage>>	mPowerAttackMontageArray;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	bool	mMoveEnable;
+	/*UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool	mMoveEnable;*/
 
 	int32	mNormalAttackIndex;
 	int32	mPowerAttackIndex;
 
 	bool	mNormalAttackEnable;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	EPlayerAnimType	mAnimType;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool	mOnGround;
+
+	bool	mCanJump;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAnimMontage* mJumpRecoveryAdditiveMontage;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	float	mAdditiveAlpha;
+
 public:
 	UPlayerAnimInstance();
+
+public:
+	void SetAnimType(EPlayerAnimType Type)
+	{
+		mAnimType = Type;
+	}
 
 public:
 	virtual void NativeInitializeAnimation();
@@ -46,6 +76,7 @@ public:
 public:
 	void PlayNormalAttackMontage();
 	void PlayPowerAttackMontage();
+	void PlayJump();
 
 	UFUNCTION()
 	void AnimNotify_NormalAttack();

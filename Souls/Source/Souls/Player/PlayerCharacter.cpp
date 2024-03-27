@@ -60,3 +60,12 @@ void APlayerCharacter::PlayPowerAttackMontage()
 	mAnimInst->PlayPowerAttackMontage();
 }
 
+void APlayerCharacter::PlayJump()
+{
+	if (CanJump())
+	{
+		Jump();
+		mAnimInst->PlayJump();
+	}
+}
+

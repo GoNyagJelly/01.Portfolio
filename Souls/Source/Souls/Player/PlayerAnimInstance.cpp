@@ -16,6 +16,12 @@ UPlayerAnimInstance::UPlayerAnimInstance()
 	mNormalAttackEnable = true;
 
 	mPowerAttackIndex = 0;
+
+	mCanJump = true;
+
+	mAnimType = EPlayerAnimType::Default;
+
+	mAdditiveAlpha = 0.f;
 }
 
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -33,6 +39,26 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 			mMoveSpeed = Movement->Velocity.Length();
 
 			mMoveSpeed /= Movement->MaxWalkSpeed;
+
+			mOnGround = Movement->IsMovingOnGround();
+
+			if (!mOnGround && mAnimType != EPlayerAnimType::Jump &&
+				mAnimType != EPlayerAnimType::Fall)
+			{
+				mAnimType = EPlayerAnimType::Fall;
+			}
+
+			// 만약 기본 상태가 아니라면 공격 상태를 비활성화 한다.
+			if (mAnimType != EPlayerAnimType::Default)
+			{
+				mAttackEnable = false;
+			}
+
+			// 땅을 밟았는데 상태가 Fall 상태일 경우 다 떨어졌다는 것이다.
+			if (mOnGround && mAnimType == EPlayerAnimType::Fall)
+			{
+				mAttackEnable = true;
+			}
 		}
 
 		AMainPlayerController* Controller = PlayerCharacter->GetController<AMainPlayerController>();
@@ -64,6 +90,7 @@ void UPlayerAnimInstance::PlayNormalAttackMontage()
 
 void UPlayerAnimInstance::AnimNotify_NormalAttack()
 {
+
 }
 
 void UPlayerAnimInstance::AnimNotify_NormalAttackEnable()
@@ -82,6 +109,20 @@ void UPlayerAnimInstance::PlayPowerAttackMontage()
 	Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
 }
 
+void UPlayerAnimInstance::PlayJump()
+{
+	mCanJump = false;
+
+	mAnimType = EPlayerAnimType::Jump;
+
+	// 점프 리커버리 몽타주가 재생되고 있다면 재생을 중지한다.
+	if (Montage_IsPlaying(mJumpRecoveryAdditiveMontage))
+	{
+		Montage_Stop(0.1f, mJumpRecoveryAdditiveMontage);
+		mAdditiveAlpha = 0.f;
+	}
+}
+
 void UPlayerAnimInstance::AnimNotify_PowerAttack()
 {
 }
@@ -89,21 +130,15 @@ void UPlayerAnimInstance::AnimNotify_PowerAttack()
 void UPlayerAnimInstance::AnimNotify_PowerAttackStart()
 {
 	mNormalAttackEnable = false;
-
-	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
-	if (IsValid(PlayerCharacter))
-	{
-		AMainPlayerController* Controller = PlayerCharacter->GetController<AMainPlayerController>();
-		if (IsValid(Controller))
-		{
-			mMoveEnable = Controller->GetMoveEnable();
-		}
-	}
+	//AMainPlayerController* Controller = Cast<AMainPlayerController>(TryGetPawnOwner());
+	//if (IsValid(Controller))
+	//{
+	//	mMoveEnable = Controller->GetMoveEnable();
+	//}
 }
 
 void UPlayerAnimInstance::AnimNotify_PowerAttackEnd()
 {
 	mNormalAttackIndex = 0;
 	mNormalAttackEnable = true;
-	mMoveEnable = true;
 }

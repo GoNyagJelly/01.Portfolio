@@ -14,21 +14,19 @@ class SOULS_API AMainPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
+public:
+	AMainPlayerController();
+
 private:
 	float	mMoveDir;
 
 public:
-	bool	mMoveEnable = true;
+	bool	mMoveEnable;
 
 public:
 	float GetMoveDir()
 	{
 		return mMoveDir;
-	}
-
-	bool GetMoveEnable()
-	{
-		return mMoveEnable;
 	}
 
 protected:
@@ -41,4 +39,5 @@ protected:
 	void OnLookUp(const FInputActionValue& InputActionValue);
 	void OnNormalAttack(const FInputActionValue& InputActionValue);
 	void OnPowerAttack(const FInputActionValue& InputActionValue);
+	void OnJump(const FInputActionValue& InputActionValue);
 };

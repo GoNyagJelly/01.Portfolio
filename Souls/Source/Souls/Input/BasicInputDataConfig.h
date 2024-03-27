@@ -21,4 +21,5 @@ public:
 	UInputAction* LookUp = nullptr;
 	UInputAction* NormalAttack = nullptr;
 	UInputAction* PowerAttack = nullptr;
+	UInputAction* Jump = nullptr;
 };
