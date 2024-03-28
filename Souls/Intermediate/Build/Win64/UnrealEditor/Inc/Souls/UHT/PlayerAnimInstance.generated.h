@@ -19,6 +19,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_27_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execAnimNotify_RollEnd); \
+	DECLARE_FUNCTION(execAnimNotify_RollStart); \
 	DECLARE_FUNCTION(execAnimNotify_JumpRecoveryEnd); \
 	DECLARE_FUNCTION(execAnimNotify_FallEnd); \
 	DECLARE_FUNCTION(execAnimNotify_TransitionFall); \

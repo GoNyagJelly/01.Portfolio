@@ -78,6 +78,20 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 		}
 		return Z_Registration_Info_UEnum_EPlayerAnimType.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UPlayerAnimInstance::execAnimNotify_RollEnd)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AnimNotify_RollEnd();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UPlayerAnimInstance::execAnimNotify_RollStart)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AnimNotify_RollStart();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UPlayerAnimInstance::execAnimNotify_JumpRecoveryEnd)
 	{
 		P_FINISH;
@@ -153,6 +167,8 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 			{ "AnimNotify_PowerAttack", &UPlayerAnimInstance::execAnimNotify_PowerAttack },
 			{ "AnimNotify_PowerAttackEnd", &UPlayerAnimInstance::execAnimNotify_PowerAttackEnd },
 			{ "AnimNotify_PowerAttackStart", &UPlayerAnimInstance::execAnimNotify_PowerAttackStart },
+			{ "AnimNotify_RollEnd", &UPlayerAnimInstance::execAnimNotify_RollEnd },
+			{ "AnimNotify_RollStart", &UPlayerAnimInstance::execAnimNotify_RollStart },
 			{ "AnimNotify_TransitionFall", &UPlayerAnimInstance::execAnimNotify_TransitionFall },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -333,6 +349,50 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/PlayerAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerAnimInstance, nullptr, "AnimNotify_RollEnd", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/PlayerAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerAnimInstance, nullptr, "AnimNotify_RollStart", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_TransitionFall_Statics
 	{
 #if WITH_METADATA
@@ -426,6 +486,8 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_PowerAttack, "AnimNotify_PowerAttack" }, // 1173555985
 		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_PowerAttackEnd, "AnimNotify_PowerAttackEnd" }, // 143241588
 		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_PowerAttackStart, "AnimNotify_PowerAttackStart" }, // 2186711288
+		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollEnd, "AnimNotify_RollEnd" }, // 2767713477
+		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_RollStart, "AnimNotify_RollStart" }, // 2380667792
 		{ &Z_Construct_UFunction_UPlayerAnimInstance_AnimNotify_TransitionFall, "AnimNotify_TransitionFall" }, // 3010938648
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerAnimInstance_Statics::FuncInfo) < 2048);
@@ -567,9 +629,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 		{ EPlayerAnimType_StaticEnum, TEXT("EPlayerAnimType"), &Z_Registration_Info_UEnum_EPlayerAnimType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1165080499U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerAnimInstance, UPlayerAnimInstance::StaticClass, TEXT("UPlayerAnimInstance"), &Z_Registration_Info_UClass_UPlayerAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnimInstance), 1568505602U) },
+		{ Z_Construct_UClass_UPlayerAnimInstance, UPlayerAnimInstance::StaticClass, TEXT("UPlayerAnimInstance"), &Z_Registration_Info_UClass_UPlayerAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerAnimInstance), 1313144484U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_2220147815(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_1033118841(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_Player_PlayerAnimInstance_h_Statics::EnumInfo));

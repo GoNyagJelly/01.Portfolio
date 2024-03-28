@@ -45,6 +45,21 @@
     <ClInclude Include="..\..\Source\Souls\Souls.h">
       <Filter>Source\Souls</Filter>
     </ClInclude>
+    <Filter Include="Source\Souls\AI">
+      <UniqueIdentifier>{4F47AC04-371D-3730-9C5C-EC76D781416A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\AI\AIPawn.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\AIPawn.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\DefaultAIController.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\DefaultAIController.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
     <Filter Include="Source\Souls\GameMode">
       <UniqueIdentifier>{9989DB44-AF30-34ED-9165-AC0ACD24CC41}</UniqueIdentifier>
     </Filter>

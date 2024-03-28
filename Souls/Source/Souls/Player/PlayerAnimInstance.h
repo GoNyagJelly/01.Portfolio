@@ -45,6 +45,7 @@ protected:
 
 	int32	mNormalAttackIndex;
 	int32	mPowerAttackIndex;
+	int32	mRollIndex;
 
 	bool	mNormalAttackEnable;
 
@@ -107,4 +108,10 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_JumpRecoveryEnd();
+
+	UFUNCTION()
+	void AnimNotify_RollStart();
+
+	UFUNCTION()
+	void AnimNotify_RollEnd();
 };

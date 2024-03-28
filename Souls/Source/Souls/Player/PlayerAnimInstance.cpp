@@ -131,11 +131,11 @@ void UPlayerAnimInstance::PlayJump()
 
 void UPlayerAnimInstance::PlayRollMontage()
 {
-	if (!Montage_IsPlaying(mPowerAttackMontageArray[mPowerAttackIndex]))
+	if (!Montage_IsPlaying(mRollMontageArray[mRollIndex]))
 	{
-		Montage_SetPosition(mPowerAttackMontageArray[mPowerAttackIndex], 0.f);
+		Montage_SetPosition(mRollMontageArray[mRollIndex], 0.f);
 
-		Montage_Play(mPowerAttackMontageArray[mPowerAttackIndex]);
+		Montage_Play(mRollMontageArray[mRollIndex]);
 
 		mAnimType = EPlayerAnimType::Roll;
 	}
@@ -200,4 +200,13 @@ void UPlayerAnimInstance::AnimNotify_FallEnd()
 void UPlayerAnimInstance::AnimNotify_JumpRecoveryEnd()
 {
 	mAdditiveAlpha = 0.f;
+}
+
+void UPlayerAnimInstance::AnimNotify_RollStart()
+{
+}
+
+void UPlayerAnimInstance::AnimNotify_RollEnd()
+{
+	mAnimType = EPlayerAnimType::Default;
 }
