@@ -22,6 +22,8 @@ private:
 
 public:
 	bool	mMoveEnable;
+	bool	mJumpEnable;
+	bool	mPowerAttackEnable;
 
 public:
 	float GetMoveDir()

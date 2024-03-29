@@ -189,6 +189,7 @@
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\AudioEditor\UHT"
 /I "Editor\AudioEditor\Classes"
 /I "Editor\AudioEditor\Public"
+/I "ThirdParty\libSampleRate\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\LevelEditor\UHT"
 /I "Editor\LevelEditor\Public"
 /I "Editor\CommonMenuExtensions\Public"

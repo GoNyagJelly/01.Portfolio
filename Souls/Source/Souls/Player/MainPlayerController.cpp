@@ -8,6 +8,8 @@
 AMainPlayerController::AMainPlayerController()
 {
 	mMoveEnable = true;
+	mJumpEnable = true;
+	mPowerAttackEnable = true;
 }
 
 void AMainPlayerController::BeginPlay()
@@ -97,9 +99,12 @@ void AMainPlayerController::OnNormalAttack(const FInputActionValue& InputActionV
 
 void AMainPlayerController::OnJump(const FInputActionValue& InputActionValue)
 {
-	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
+	if (mJumpEnable)
+	{
+		APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
 
-	ControlledPawn->PlayJump();
+		ControlledPawn->PlayJump();
+	}
 }
 
 void AMainPlayerController::OnRoll(const FInputActionValue& InputActionValue)
@@ -111,7 +116,10 @@ void AMainPlayerController::OnRoll(const FInputActionValue& InputActionValue)
 
 void AMainPlayerController::OnPowerAttack(const FInputActionValue& InputActionValue)
 {
-	APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
+	if (mPowerAttackEnable)
+	{
+		APlayerCharacter* ControlledPawn = GetPawn<APlayerCharacter>();
 
-	ControlledPawn->PlayPowerAttackMontage();
+		ControlledPawn->PlayPowerAttackMontage();
+	}
 }

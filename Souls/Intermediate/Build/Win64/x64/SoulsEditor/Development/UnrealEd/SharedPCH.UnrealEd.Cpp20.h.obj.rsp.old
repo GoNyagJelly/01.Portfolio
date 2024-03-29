@@ -199,6 +199,7 @@
 /I "Developer\CollectionManager\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\ContentBrowserData\UHT"
 /I "Editor\ContentBrowserData\Public"
+/I "ThirdParty\libSampleRate\Public"
 /I "Runtime\NetworkFileSystem\Public"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\UMG\UHT"
 /I "Runtime\UMG\Public"

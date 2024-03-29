@@ -204,9 +204,29 @@ void UPlayerAnimInstance::AnimNotify_JumpRecoveryEnd()
 
 void UPlayerAnimInstance::AnimNotify_RollStart()
 {
+	mNormalAttackEnable = false;
+
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = false;
+		PlayerController->mJumpEnable = false;
+		PlayerController->mPowerAttackEnable = false;
+	}
 }
 
 void UPlayerAnimInstance::AnimNotify_RollEnd()
 {
 	mAnimType = EPlayerAnimType::Default;
+
+	mNormalAttackEnable = true;
+	mNormalAttackIndex = 0;
+
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = true;
+		PlayerController->mJumpEnable = true;
+		PlayerController->mPowerAttackEnable = true;
+	}
 }
