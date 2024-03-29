@@ -14,4 +14,7 @@ class SOULS_API ADefaultAIController : public AAIController
 {
 	GENERATED_BODY()
 	
+
+public:
+	ADefaultAIController();
 };

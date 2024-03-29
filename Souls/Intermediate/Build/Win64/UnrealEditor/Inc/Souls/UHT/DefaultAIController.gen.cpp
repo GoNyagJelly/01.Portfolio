@@ -76,7 +76,6 @@ void EmptyLinkFunctionForGeneratedCodeDefaultAIController() {}
 	{
 		return ADefaultAIController::StaticClass();
 	}
-	ADefaultAIController::ADefaultAIController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ADefaultAIController);
 	ADefaultAIController::~ADefaultAIController() {}
 	struct Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_DefaultAIController_h_Statics

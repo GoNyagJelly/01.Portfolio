@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Souls_Source_Souls_AI_DefaultAIController_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ADefaultAIController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ADefaultAIController(ADefaultAIController&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ADefaultAIController); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ADefaultAIController); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ADefaultAIController) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ADefaultAIController) \
 	NO_API virtual ~ADefaultAIController();
 
 

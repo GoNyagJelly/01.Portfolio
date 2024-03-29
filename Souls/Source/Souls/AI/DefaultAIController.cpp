@@ -3,3 +3,7 @@
 
 #include "DefaultAIController.h"
 
+ADefaultAIController::ADefaultAIController()
+{
+	
+}
