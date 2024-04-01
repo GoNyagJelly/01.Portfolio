@@ -29,6 +29,10 @@ AAIPawn::AAIPawn()
 		AIControllerClass = AIClass.Class;
 }
 
+void AAIPawn::ChangeAIAnimType(uint8 AnimType)
+{
+}
+
 // Called when the game starts or when spawned
 void AAIPawn::BeginPlay()
 {

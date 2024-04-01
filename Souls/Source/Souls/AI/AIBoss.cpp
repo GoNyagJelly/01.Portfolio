@@ -3,6 +3,7 @@
 
 #include "AIBoss.h"
 #include "DefaultAIController.h"
+#include "BossAnimInstance.h"
 
 AAIBoss::AAIBoss()
 {
@@ -13,6 +14,11 @@ AAIBoss::AAIBoss()
 	if (MeshAsset.Succeeded())
 		mMesh->SetSkeletalMesh(MeshAsset.Object);
 
+	static ConstructorHelpers::FClassFinder<UAnimInstance> AnimAsset(TEXT("/Script/Engine.AnimBlueprint'/Game/Blueprint/Main/Boss/AB_Boss.AB_Boss_C'"));
+
+	if (AnimAsset.Succeeded())
+		mMesh->SetAnimInstanceClass(AnimAsset.Class);
+
 	mMesh->SetRelativeLocation(FVector(0.0, 0.0, - 115.0));
 	mMesh->SetRelativeRotation(FRotator(0.0, -90.0, 0.0));
 
@@ -20,4 +26,21 @@ AAIBoss::AAIBoss()
 	mCapsule->SetCapsuleRadius(40.f);
 
 	AIControllerClass = ADefaultAIController::StaticClass();
+}
+
+void AAIBoss::ChangeAIAnimType(uint8 AnimType)
+{
+	mAnimInst->ChangeAnimType((EBossAnimType)AnimType);
+}
+
+void AAIBoss::BeginPlay()
+{
+	Super::BeginPlay();
+
+	mAnimInst = Cast<UBossAnimInstance>(mMesh->GetAnimInstance());
+}
+
+void AAIBoss::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 }

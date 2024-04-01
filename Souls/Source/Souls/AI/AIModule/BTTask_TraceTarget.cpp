@@ -4,6 +4,7 @@
 #include "BTTask_TraceTarget.h"
 #include "../DefaultAIController.h"
 #include "../AIPawn.h"
+#include "../BossAnimInstance.h"
 
 UBTTask_TraceTarget::UBTTask_TraceTarget()
 {
@@ -30,11 +31,15 @@ EBTNodeResult::Type UBTTask_TraceTarget::ExecuteTask(UBehaviorTreeComponent& Own
 	if (!IsValid(Target))
 	{
 		Controller->StopMovement();
+
+		Pawn->ChangeAIAnimType((uint8)EBossAnimType::Idle);
 		
 		return EBTNodeResult::Failed;
 	}
 
 	UAIBlueprintHelperLibrary::SimpleMoveToActor(Controller, Target);
+
+	Pawn->ChangeAIAnimType((uint8)EBossAnimType::Run);
 	
 	return EBTNodeResult::InProgress;
 }
@@ -52,6 +57,8 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 		FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
 
 		Controller->StopMovement();
+
+		Pawn->ChangeAIAnimType((uint8)EBossAnimType::Idle);
 
 		return;
 	}
@@ -96,6 +103,8 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
 
 		Controller->StopMovement();
+
+		Pawn->ChangeAIAnimType((uint8)EBossAnimType::Idle);
 	}
 }
 
