@@ -104,7 +104,7 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 
 		Controller->StopMovement();
 
-		Pawn->ChangeAIAnimType((uint8)EBossAnimType::Idle);
+		Pawn->ChangeAIAnimType((uint8)EBossAnimType::Attack);
 	}
 }
 
