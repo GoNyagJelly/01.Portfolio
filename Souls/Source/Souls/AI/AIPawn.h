@@ -32,6 +32,11 @@ public:
 		return mCapsule->GetScaledCapsuleHalfHeight();
 	}
 
+	float GetCapsuleRadius()
+	{
+		return mCapsule->GetScaledCapsuleRadius();
+	}
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

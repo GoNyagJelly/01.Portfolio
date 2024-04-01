@@ -14,7 +14,7 @@ AAIBoss::AAIBoss()
 		mMesh->SetSkeletalMesh(MeshAsset.Object);
 
 	mMesh->SetRelativeLocation(FVector(0.0, 0.0, - 115.0));
-	mMesh->SetRelativeRotation(FRotator(0.0, -160.0, 0.0));
+	mMesh->SetRelativeRotation(FRotator(0.0, -90.0, 0.0));
 
 	mCapsule->SetCapsuleHalfHeight(115.f);
 	mCapsule->SetCapsuleRadius(40.f);
