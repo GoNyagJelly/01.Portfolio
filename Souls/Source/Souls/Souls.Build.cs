@@ -13,8 +13,9 @@ public class Souls : ModuleRules
 			, "InputCore"
 			, "UMG"
 			, "EnhancedInput"
-			/*, "AIModule"
-			, "LevelSequence"
+			, "AIModule"
+			, "NavigationSystem"
+			/*, "LevelSequence"
 			, "MovieScene"
 			, "MediaAssets" */
 		});

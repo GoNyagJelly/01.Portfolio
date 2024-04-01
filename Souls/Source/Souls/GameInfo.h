@@ -3,12 +3,14 @@
 #pragma once
 
 #include "EngineMinimal.h"
-#include "Engine.h"
+#include "DrawDebugHelpers.h"
+//#include "Engine.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 
-#include "Blueprint/SlateBlueprintLibrary.h"
-
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BlackboardData.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 #include "UObject/NoExportTypes.h"
 #include "GameInfo.generated.h"

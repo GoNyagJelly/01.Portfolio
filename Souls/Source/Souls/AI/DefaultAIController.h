@@ -17,4 +17,12 @@ class SOULS_API ADefaultAIController : public AAIController
 
 public:
 	ADefaultAIController();
+
+protected:
+	UBehaviorTree* mBehaviorTree;
+	UBlackboardData* mBlackBoard;
+
+protected:
+	virtual void OnPossess(APawn* InPawn) override;
+	virtual void OnUnPossess() override;
 };

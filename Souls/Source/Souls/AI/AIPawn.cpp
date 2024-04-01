@@ -10,8 +10,23 @@ AAIPawn::AAIPawn()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	mCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Body"));
+	mMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+
+	mMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Movement"));
+
+	mMovement->SetUpdatedComponent(mCapsule);
+
+	SetRootComponent(mCapsule);
+
+	mMesh->SetupAttachment(mCapsule);
+
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
-	AIControllerClass = ADefaultAIController::StaticClass();
+
+	static ConstructorHelpers::FClassFinder<AAIController>	AIClass(TEXT("/Script/Engine.Blueprint'/Game/Blueprint/Main/AI/BP_DefaultAIController.BP_DefaultAIController_C'"));
+
+	if (AIClass.Succeeded())
+		AIControllerClass = AIClass.Class;
 }
 
 // Called when the game starts or when spawned

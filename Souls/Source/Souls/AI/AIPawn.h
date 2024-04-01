@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../GameInfo.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/Pawn.h"
 #include "AIPawn.generated.h"
 
@@ -14,6 +15,22 @@ class SOULS_API AAIPawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	AAIPawn();
+
+protected:
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* mCapsule;
+
+	UPROPERTY(EditAnywhere)
+	USkeletalMeshComponent* mMesh;
+
+	UPROPERTY(EditAnywhere)
+	UFloatingPawnMovement* mMovement;
+
+public:
+	float GetHalfHeight()	const
+	{
+		return mCapsule->GetScaledCapsuleHalfHeight();
+	}
 
 protected:
 	// Called when the game starts or when spawned

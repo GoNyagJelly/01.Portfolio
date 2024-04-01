@@ -17,6 +17,8 @@ APlayerCharacter::APlayerCharacter()
 	mCameraArm->SetupAttachment(GetCapsuleComponent());
 	mCamera->SetupAttachment(mCameraArm);
 
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Player"));
+
 	mCameraArm->bUsePawnControlRotation = true;
 	mCamera->bUsePawnControlRotation = false;
 
