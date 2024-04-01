@@ -75,6 +75,12 @@
     <ClInclude Include="..\..\Source\Souls\AI\AIModule\BTService_DetectTarget.h">
       <Filter>Source\Souls\AI\AIModule</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\AIModule\BTTask_TraceTarget.cpp">
+      <Filter>Source\Souls\AI\AIModule</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\AIModule\BTTask_TraceTarget.h">
+      <Filter>Source\Souls\AI\AIModule</Filter>
+    </ClInclude>
     <Filter Include="Source\Souls\GameMode">
       <UniqueIdentifier>{9989DB44-AF30-34ED-9165-AC0ACD24CC41}</UniqueIdentifier>
     </Filter>

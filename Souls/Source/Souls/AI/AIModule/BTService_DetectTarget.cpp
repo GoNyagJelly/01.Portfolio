@@ -38,4 +38,13 @@ void UBTService_DetectTarget::TickNode(UBehaviorTreeComponent& OwnerComp, uint8*
 
 	DrawDebugSphere(GetWorld(), AILocation, 1500.f, 20, DrawColor, false, 0.35f);
 #endif
+
+	if (IsCollision)
+	{
+		Controller->GetBlackboardComponent()->SetValueAsObject(TEXT("Target"), result.GetActor());
+	}
+	else
+	{
+		Controller->GetBlackboardComponent()->SetValueAsObject(TEXT("Target"), nullptr);
+	}
 }
