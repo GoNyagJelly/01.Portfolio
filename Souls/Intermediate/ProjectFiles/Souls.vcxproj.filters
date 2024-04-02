@@ -81,6 +81,12 @@
     <ClInclude Include="..\..\Source\Souls\AI\AIModule\BTService_DetectTarget.h">
       <Filter>Source\Souls\AI\AIModule</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\AIModule\BTTask_Attack.cpp">
+      <Filter>Source\Souls\AI\AIModule</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\AIModule\BTTask_Attack.h">
+      <Filter>Source\Souls\AI\AIModule</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Souls\AI\AIModule\BTTask_TraceTarget.cpp">
       <Filter>Source\Souls\AI\AIModule</Filter>
     </ClCompile>

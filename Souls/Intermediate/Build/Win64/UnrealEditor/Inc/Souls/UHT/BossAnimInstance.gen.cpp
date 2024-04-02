@@ -75,8 +75,42 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		}
 		return Z_Registration_Info_UEnum_EBossAnimType.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UBossAnimInstance::execAnimNotify_BossAttack)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AnimNotify_BossAttack();
+		P_NATIVE_END;
+	}
 	void UBossAnimInstance::StaticRegisterNativesUBossAnimInstance()
 	{
+		UClass* Class = UBossAnimInstance::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "AnimNotify_BossAttack", &UBossAnimInstance::execAnimNotify_BossAttack },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "AI/BossAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBossAnimInstance, nullptr, "AnimNotify_BossAttack", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics::Function_MetaDataParams), Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UBossAnimInstance);
 	UClass* Z_Construct_UClass_UBossAnimInstance_NoRegister()
@@ -86,6 +120,7 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 	struct Z_Construct_UClass_UBossAnimInstance_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -103,6 +138,10 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Souls,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::DependentSingletons) < 16);
+	const FClassFunctionLinkInfo Z_Construct_UClass_UBossAnimInstance_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack, "AnimNotify_BossAttack" }, // 3550956475
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBossAnimInstance_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "AnimInstance" },
@@ -130,11 +169,11 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		nullptr,
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_UBossAnimInstance_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::PropPointers),
 		0,
 		0x009000A8u,
@@ -165,9 +204,9 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		{ EBossAnimType_StaticEnum, TEXT("EBossAnimType"), &Z_Registration_Info_UEnum_EBossAnimType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1656526928U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 2677964039U) },
+		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 3874511352U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_2247001971(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_3281658246(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo));
