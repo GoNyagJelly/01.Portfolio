@@ -76,7 +76,6 @@ void EmptyLinkFunctionForGeneratedCodeBossPawn() {}
 	{
 		return ABossPawn::StaticClass();
 	}
-	ABossPawn::ABossPawn() {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABossPawn);
 	ABossPawn::~ABossPawn() {}
 	struct Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossPawn_h_Statics

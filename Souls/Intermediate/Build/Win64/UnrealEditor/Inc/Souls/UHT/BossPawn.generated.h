@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Souls_Source_Souls_AI_BossPawn_h_14_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABossPawn(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABossPawn(ABossPawn&&); \

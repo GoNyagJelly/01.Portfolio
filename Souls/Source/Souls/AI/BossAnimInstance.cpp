@@ -2,6 +2,7 @@
 
 
 #include "BossAnimInstance.h"
+#include "BossPawn.h"
 
 void UBossAnimInstance::NativeInitializeAnimation()
 {
@@ -17,7 +18,9 @@ void UBossAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 void UBossAnimInstance::AnimNotify_BossAttack()
 {
-	APawn* Pawn = TryGetPawnOwner();
+	ABossPawn* Pawn = Cast<ABossPawn>(TryGetPawnOwner());
+
+	Pawn->Attack();
 
 	FCollisionQueryParams	param(NAME_None, false, Pawn);
 

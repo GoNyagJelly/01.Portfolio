@@ -24,23 +24,18 @@ AAIBoss::AAIBoss()
 
 	mCapsule->SetCapsuleHalfHeight(115.f);
 	mCapsule->SetCapsuleRadius(40.f);
-
-	AIControllerClass = ADefaultAIController::StaticClass();
-}
-
-void AAIBoss::ChangeAIAnimType(uint8 AnimType)
-{
-	mAnimInst->ChangeAnimType((EBossAnimType)AnimType);
 }
 
 void AAIBoss::BeginPlay()
 {
 	Super::BeginPlay();
-
-	mAnimInst = Cast<UBossAnimInstance>(mMesh->GetAnimInstance());
 }
 
 void AAIBoss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+void AAIBoss::Attack()
+{
 }

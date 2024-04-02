@@ -11,7 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeAIBoss() {}
 // Cross Module References
 	SOULS_API UClass* Z_Construct_UClass_AAIBoss();
 	SOULS_API UClass* Z_Construct_UClass_AAIBoss_NoRegister();
-	SOULS_API UClass* Z_Construct_UClass_AAIPawn();
+	SOULS_API UClass* Z_Construct_UClass_ABossPawn();
 	UPackage* Z_Construct_UPackage__Script_Souls();
 // End Cross Module References
 	void AAIBoss::StaticRegisterNativesAAIBoss()
@@ -32,7 +32,7 @@ void EmptyLinkFunctionForGeneratedCodeAIBoss() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_AAIBoss_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_AAIPawn,
+		(UObject* (*)())Z_Construct_UClass_ABossPawn,
 		(UObject* (*)())Z_Construct_UPackage__Script_Souls,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAIBoss_Statics::DependentSingletons) < 16);
@@ -83,9 +83,9 @@ void EmptyLinkFunctionForGeneratedCodeAIBoss() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_AIBoss_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAIBoss, AAIBoss::StaticClass, TEXT("AAIBoss"), &Z_Registration_Info_UClass_AAIBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIBoss), 343370772U) },
+		{ Z_Construct_UClass_AAIBoss, AAIBoss::StaticClass, TEXT("AAIBoss"), &Z_Registration_Info_UClass_AAIBoss, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIBoss), 393356118U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_AIBoss_h_1185117032(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_AIBoss_h_2348239474(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_AIBoss_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_AIBoss_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
