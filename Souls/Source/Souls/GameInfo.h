@@ -4,7 +4,9 @@
 
 #include "EngineMinimal.h"
 #include "DrawDebugHelpers.h"
-//#include "Engine.h"
+#include "Engine/DamageEvents.h"
+#include "Engine.h"
+
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 
