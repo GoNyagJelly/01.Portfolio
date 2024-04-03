@@ -25,6 +25,14 @@ AAIBoss::AAIBoss()
 
 	mCapsule->SetCapsuleHalfHeight(115.f);
 	mCapsule->SetCapsuleRadius(40.f);
+
+	mRightWeaponCapsule->SetRelativeLocation(FVector(-43.0, 103.6, 147.0));
+	mRightWeaponCapsule->SetRelativeRotation(FRotator(58.5, 19.4, 16.7));
+	mRightWeaponCapsule->SetCapsuleHalfHeight(70.f);
+
+	mLeftWeaponCapsule->SetRelativeLocation(FVector(-106.6, 15.4, 95.5));
+	mLeftWeaponCapsule->SetRelativeRotation(FRotator(-16.2, 31.8, 77.3));
+	mLeftWeaponCapsule->SetCapsuleHalfHeight(70.f);
 }
 
 void AAIBoss::BeginPlay()

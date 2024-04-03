@@ -2,7 +2,7 @@
 
 
 #include "BossAnimInstance.h"
-#include "BossPawn.h"
+#include "MonsterPawn.h"
 
 void UBossAnimInstance::NativeInitializeAnimation()
 {
@@ -18,14 +18,14 @@ void UBossAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 void UBossAnimInstance::AnimNotify_BossAttack()
 {
-	ABossPawn* Pawn = Cast<ABossPawn>(TryGetPawnOwner());
+	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());
 
 	Pawn->Attack();
 }
 
 void UBossAnimInstance::AnimNotify_BossAttackEnd()
 {
-	ABossPawn* Pawn = Cast<ABossPawn>(TryGetPawnOwner());
+	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());
 
 	Pawn->SetBossAttackEnd(true);
 }

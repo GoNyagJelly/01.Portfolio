@@ -66,10 +66,10 @@
     <ClInclude Include="..\..\Source\Souls\AI\BossAnimInstance.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Souls\AI\BossPawn.cpp">
+    <ClCompile Include="..\..\Source\Souls\AI\MonsterPawn.cpp">
       <Filter>Source\Souls\AI</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Souls\AI\BossPawn.h">
+    <ClInclude Include="..\..\Source\Souls\AI\MonsterPawn.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Souls\AI\DefaultAIController.cpp">

@@ -13,6 +13,8 @@ AAIPawn::AAIPawn()
 	mBossAttackEnd = false;
 
 	mCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Body"));
+	mRightWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("RightWeapon"));
+	mLeftWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("LeftWeapon"));
 	
 	mMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 
@@ -23,6 +25,8 @@ AAIPawn::AAIPawn()
 	SetRootComponent(mCapsule);
 
 	mMesh->SetupAttachment(mCapsule);
+	mRightWeaponCapsule->SetupAttachment(mMesh);
+	mLeftWeaponCapsule->SetupAttachment(mMesh);
 
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 

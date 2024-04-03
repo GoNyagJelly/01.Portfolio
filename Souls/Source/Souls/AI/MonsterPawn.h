@@ -3,19 +3,19 @@
 #pragma once
 
 #include "AIPawn.h"
-#include "BossPawn.generated.h"
+#include "MonsterPawn.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SOULS_API ABossPawn : public AAIPawn
+class SOULS_API AMonsterPawn : public AAIPawn
 {
 	GENERATED_BODY()
 
 
 public:
-	ABossPawn();
+	AMonsterPawn();
 
 protected:
 	class UBossAnimInstance* mAnimInst;

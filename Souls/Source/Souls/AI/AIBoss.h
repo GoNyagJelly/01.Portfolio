@@ -2,14 +2,14 @@
 
 #pragma once
 
-#include "BossPawn.h"
+#include "MonsterPawn.h"
 #include "AIBoss.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SOULS_API AAIBoss : public ABossPawn
+class SOULS_API AAIBoss : public AMonsterPawn
 {
 	GENERATED_BODY()
 	

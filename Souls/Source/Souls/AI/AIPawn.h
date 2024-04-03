@@ -21,6 +21,12 @@ protected:
 	UCapsuleComponent* mCapsule;
 
 	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* mRightWeaponCapsule;
+
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* mLeftWeaponCapsule;
+
+	UPROPERTY(EditAnywhere)
 	USkeletalMeshComponent* mMesh;
 
 	UPROPERTY(EditAnywhere)

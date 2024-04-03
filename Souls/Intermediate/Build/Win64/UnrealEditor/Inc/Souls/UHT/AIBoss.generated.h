@@ -24,7 +24,7 @@ private: \
 	static void StaticRegisterNativesAAIBoss(); \
 	friend struct Z_Construct_UClass_AAIBoss_Statics; \
 public: \
-	DECLARE_CLASS(AAIBoss, ABossPawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Souls"), NO_API) \
+	DECLARE_CLASS(AAIBoss, AMonsterPawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Souls"), NO_API) \
 	DECLARE_SERIALIZER(AAIBoss)
 
 
