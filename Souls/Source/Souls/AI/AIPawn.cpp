@@ -13,6 +13,7 @@ AAIPawn::AAIPawn()
 	mBossAttackEnd = false;
 
 	mCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Body"));
+	
 	mMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 
 	mMovement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("Movement"));

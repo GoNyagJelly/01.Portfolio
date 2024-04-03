@@ -78,7 +78,16 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 		FVector Dir = TargetLocation - AILocation;
 		Dir.Z = 0.0;
 
-		Dir.Normalize();
+		AILocation.Z -= Pawn->GetHalfHeight();
+
+		UCapsuleComponent* TargetCapsule = Cast<UCapsuleComponent>(Target->GetRootComponent());
+
+		if (IsValid(TargetCapsule))
+		{
+			TargetLocation.Z -= TargetCapsule->GetScaledCapsuleHalfHeight();
+		}
+
+		float Distance = FVector::Distance(AILocation, TargetLocation);
 
 		FRotator Rot = FRotationMatrix::MakeFromX(Dir).Rotator();
 		Rot.Pitch = 0.0;

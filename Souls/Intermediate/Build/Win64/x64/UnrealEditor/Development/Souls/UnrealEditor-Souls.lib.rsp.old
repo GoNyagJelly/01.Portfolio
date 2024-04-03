@@ -11,5 +11,7 @@
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\AIPawn.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BossAnimInstance.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BTTask_Attack.cpp.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BossAnimInstance.gen.cpp.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\Souls.init.gen.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\Default.rc2.res"
 /OUT:"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\UnrealEditor-Souls.lib"
