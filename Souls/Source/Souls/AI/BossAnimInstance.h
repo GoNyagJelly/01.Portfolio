@@ -38,4 +38,7 @@ public:
 public:
 	UFUNCTION()
 	void AnimNotify_BossAttack();
+
+	UFUNCTION()
+	void AnimNotify_BossAttackEnd();
 };

@@ -22,3 +22,10 @@ void UBossAnimInstance::AnimNotify_BossAttack()
 
 	Pawn->Attack();
 }
+
+void UBossAnimInstance::AnimNotify_BossAttackEnd()
+{
+	ABossPawn* Pawn = Cast<ABossPawn>(TryGetPawnOwner());
+
+	Pawn->SetBossAttackEnd(true);
+}

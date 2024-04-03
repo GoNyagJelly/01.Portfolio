@@ -26,6 +26,19 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UFloatingPawnMovement* mMovement;
 
+	bool	mBossAttackEnd;
+
+public:
+	void SetBossAttackEnd(bool End)
+	{
+		mBossAttackEnd = End;
+	}
+
+	bool IsBossAttackEnd()
+	{
+		return mBossAttackEnd;
+	}
+
 public:
 	float GetHalfHeight()	const
 	{
