@@ -4,6 +4,7 @@
 #include "PlayerCharacter.h"
 #include "PlayerAnimInstance.h"
 #include "MainPlayerController.h"
+#include "../Effect/EffectBase.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -83,5 +84,81 @@ void APlayerCharacter::PlayJump()
 void APlayerCharacter::PlayRollMontage()
 {
 	mAnimInst->PlayRollMontage();
+}
+
+void APlayerCharacter::NormalAttack()
+{
+	FCollisionQueryParams	param(NAME_None, false, this);
+	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 50.f;
+
+	FVector EndLocation = StartLocation + GetActorForwardVector() * 200.f;
+
+	TArray<FHitResult>	resultArray;
+	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
+
+#if ENABLE_DRAW_DEBUG
+
+	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
+
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+
+#endif
+
+	if (IsCollision)
+	{
+		for (int32 i = 0; i < resultArray.Num(); ++i)
+		{
+			FDamageEvent	DmgEvent;
+
+			resultArray[i].GetActor()->TakeDamage(10.f, DmgEvent, GetController(), this);
+
+			FActorSpawnParameters SpawnParam;
+
+			SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+			AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(resultArray[i].ImpactPoint, resultArray[i].ImpactNormal.Rotation(), SpawnParam);
+
+			Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
+			Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonGrux/Characters/Heroes/Grux/Sounds/SoundWaves/Grux_Effort_Pain_01.Grux_Effort_Pain_01'"));
+		}
+	}
+}
+
+void APlayerCharacter::PowerAttack()
+{
+	FCollisionQueryParams	param(NAME_None, false, this);
+	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 50.f;
+
+	FVector EndLocation = StartLocation + GetActorForwardVector() * 200.f;
+
+	TArray<FHitResult>	resultArray;
+	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
+
+#if ENABLE_DRAW_DEBUG
+
+	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
+
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+
+#endif
+
+	if (IsCollision)
+	{
+		for (int32 i = 0; i < resultArray.Num(); ++i)
+		{
+			FDamageEvent	DmgEvent;
+
+			resultArray[i].GetActor()->TakeDamage(30.f, DmgEvent, GetController(), this);
+
+			FActorSpawnParameters SpawnParam;
+
+			SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+			AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(resultArray[i].ImpactPoint, resultArray[i].ImpactNormal.Rotation(), SpawnParam);
+
+			Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
+			Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonGrux/Characters/Heroes/Grux/Sounds/SoundWaves/Grux_Effort_Pain_01.Grux_Effort_Pain_01'"));
+		}
+	}
 }
 

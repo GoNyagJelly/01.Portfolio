@@ -88,7 +88,9 @@ void UPlayerAnimInstance::PlayNormalAttackMontage()
 
 void UPlayerAnimInstance::AnimNotify_NormalAttack()
 {
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
 
+	PlayerCharacter->NormalAttack();
 }
 
 void UPlayerAnimInstance::AnimNotify_NormalAttackEnable()
@@ -143,6 +145,9 @@ void UPlayerAnimInstance::PlayRollMontage()
 
 void UPlayerAnimInstance::AnimNotify_PowerAttack()
 {
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
+
+	PlayerCharacter->PowerAttack();
 }
 
 void UPlayerAnimInstance::AnimNotify_PowerAttackStart()

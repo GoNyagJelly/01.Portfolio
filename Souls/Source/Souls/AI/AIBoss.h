@@ -18,6 +18,13 @@ public:
 	AAIBoss();
 
 protected:
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* mRightWeaponCapsule;
+
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* mLeftWeaponCapsule;
+
+protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

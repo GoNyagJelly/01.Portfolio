@@ -13,8 +13,6 @@ AAIPawn::AAIPawn()
 	mBossAttackEnd = false;
 
 	mCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Body"));
-	mRightWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("RightWeapon"));
-	mLeftWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("LeftWeapon"));
 	
 	mMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 
@@ -25,8 +23,6 @@ AAIPawn::AAIPawn()
 	SetRootComponent(mCapsule);
 
 	mMesh->SetupAttachment(mCapsule);
-	mRightWeaponCapsule->SetupAttachment(mMesh);
-	mLeftWeaponCapsule->SetupAttachment(mMesh);
 
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 
@@ -54,10 +50,12 @@ void AAIPawn::Tick(float DeltaTime)
 
 }
 
-// Called to bind functionality to input
-void AAIPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+float AAIPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
+
+	return DamageAmount;
 }
 

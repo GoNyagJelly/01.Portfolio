@@ -20,6 +20,11 @@ AAIBoss::AAIBoss()
 	if (AnimAsset.Succeeded())
 		mMesh->SetAnimInstanceClass(AnimAsset.Class);
 
+	mRightWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("RightWeapon"));
+	mLeftWeaponCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("LeftWeapon"));
+	mRightWeaponCapsule->SetupAttachment(mMesh);
+	mLeftWeaponCapsule->SetupAttachment(mMesh);
+
 	mMesh->SetRelativeLocation(FVector(0.0, 0.0, - 115.0));
 	mMesh->SetRelativeRotation(FRotator(0.0, -90.0, 0.0));
 

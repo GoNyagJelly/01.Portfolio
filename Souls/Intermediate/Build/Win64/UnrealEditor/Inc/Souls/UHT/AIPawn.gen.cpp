@@ -36,14 +36,6 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_mCapsule;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_mRightWeaponCapsule_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_mRightWeaponCapsule;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_mLeftWeaponCapsule_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_mLeftWeaponCapsule;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_mMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_mMesh;
@@ -76,22 +68,6 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mCapsule = { "mCapsule", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mCapsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mCapsule_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mCapsule_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIPawn_Statics::NewProp_mRightWeaponCapsule_MetaData[] = {
-		{ "Category", "AIPawn" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "AI/AIPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mRightWeaponCapsule = { "mRightWeaponCapsule", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mRightWeaponCapsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mRightWeaponCapsule_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mRightWeaponCapsule_MetaData) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIPawn_Statics::NewProp_mLeftWeaponCapsule_MetaData[] = {
-		{ "Category", "AIPawn" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "AI/AIPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mLeftWeaponCapsule = { "mLeftWeaponCapsule", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mLeftWeaponCapsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mLeftWeaponCapsule_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mLeftWeaponCapsule_MetaData) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIPawn_Statics::NewProp_mMesh_MetaData[] = {
 		{ "Category", "AIPawn" },
 		{ "EditInline", "true" },
@@ -109,8 +85,6 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement = { "mMovement", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mMovement), Z_Construct_UClass_UFloatingPawnMovement_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAIPawn_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mCapsule,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mRightWeaponCapsule,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mLeftWeaponCapsule,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement,
 	};
@@ -152,9 +126,9 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAIPawn, AAIPawn::StaticClass, TEXT("AAIPawn"), &Z_Registration_Info_UClass_AAIPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIPawn), 518874782U) },
+		{ Z_Construct_UClass_AAIPawn, AAIPawn::StaticClass, TEXT("AAIPawn"), &Z_Registration_Info_UClass_AAIPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIPawn), 4015867034U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_3168953622(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_3513447540(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

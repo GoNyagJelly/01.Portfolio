@@ -21,12 +21,6 @@ protected:
 	UCapsuleComponent* mCapsule;
 
 	UPROPERTY(EditAnywhere)
-	UCapsuleComponent* mRightWeaponCapsule;
-
-	UPROPERTY(EditAnywhere)
-	UCapsuleComponent* mLeftWeaponCapsule;
-
-	UPROPERTY(EditAnywhere)
 	USkeletalMeshComponent* mMesh;
 
 	UPROPERTY(EditAnywhere)
@@ -67,7 +61,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser);
 
 };

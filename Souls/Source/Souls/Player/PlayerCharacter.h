@@ -42,4 +42,8 @@ public:
 	void PlayPowerAttackMontage();
 	void PlayJump();
 	void PlayRollMontage();
+
+public:
+	virtual void NormalAttack();
+	virtual void PowerAttack();
 };
