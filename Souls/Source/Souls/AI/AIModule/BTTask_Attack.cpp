@@ -89,10 +89,20 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 
 		float Distance = FVector::Distance(AILocation, TargetLocation);
 
-		FRotator Rot = FRotationMatrix::MakeFromX(Dir).Rotator();
-		Rot.Pitch = 0.0;
-		Rot.Roll = 0.0;
+		if (Distance > 300.f)
+		{
+			FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
 
-		Pawn->SetActorRotation(Rot);
+			Pawn->ChangeAIAnimType((uint8)EBossAnimType::Idle);
+		}
+
+		else
+		{
+			FRotator Rot = FRotationMatrix::MakeFromX(Dir).Rotator();
+			Rot.Pitch = 0.0;
+			Rot.Roll = 0.0;
+
+			Pawn->SetActorRotation(Rot);
+		}
 	}
 }

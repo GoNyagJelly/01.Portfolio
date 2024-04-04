@@ -95,14 +95,14 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 
 	float Distance = FVector::Distance(AILocation, TargetLocation);
 
-	Distance -= Pawn->GetCapsuleRadius();
+	/*Distance -= Pawn->GetCapsuleRadius();
 
 	if (IsValid(TargetCapsule))
 	{
 		Distance -= TargetCapsule->GetScaledCapsuleRadius();
-	}
+	}*/
 
-	if (Distance <= 200.f)
+	if (Distance <= 300.f)
 	{
 		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
 
