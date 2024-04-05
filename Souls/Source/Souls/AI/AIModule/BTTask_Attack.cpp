@@ -93,7 +93,7 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 
 		float Distance = FVector::Distance(AILocation, TargetLocation);
 
-		if (Distance > 1.f)
+		if (Distance > 300.f)
 		{
 			FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
 
@@ -107,6 +107,9 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 			Rot.Roll = 0.0;
 
 			Pawn->SetActorRotation(Rot);
+
+			AAIBoss* ControlledPawn = Cast<AAIBoss>(Controller->GetPawn());
+			ControlledPawn->PlayBossAttackMontage();
 		}
 	}
 }
