@@ -31,16 +31,22 @@ AAIBoss::AAIBoss()
 	mCapsule->SetCapsuleHalfHeight(115.f);
 	mCapsule->SetCapsuleRadius(40.f);
 
-	mRightWeaponCapsule->SetRelativeLocation(FVector(-43.0, 103.6, 147.0));
-	mRightWeaponCapsule->SetRelativeRotation(FRotator(58.5, 19.4, 16.7));
+	mRightWeaponCapsule->SetRelativeLocation(FVector(0.0, 0.0, 0.0));
+	mRightWeaponCapsule->SetRelativeRotation(FRotator(0.0, 0.0, 0.0));
 	mRightWeaponCapsule->SetCapsuleHalfHeight(70.f);
 
-	mLeftWeaponCapsule->SetRelativeLocation(FVector(-106.6, 15.4, 95.5));
-	mLeftWeaponCapsule->SetRelativeRotation(FRotator(-16.2, 31.8, 77.3));
+	mLeftWeaponCapsule->SetRelativeLocation(FVector(0.0, 0.0, 0.0));
+	mLeftWeaponCapsule->SetRelativeRotation(FRotator(0.0, 0.0, 0.0));
 	mLeftWeaponCapsule->SetCapsuleHalfHeight(70.f);
 
-	//mRightWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
-	//mLeftWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
+	mRightWeaponCapsule->AttachToComponent(mMesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("FX_Clang_R"));
+	mLeftWeaponCapsule->AttachToComponent(mMesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("FX_Clang_L"));
+
+	/*mRightWeaponCapsule->SetNotifyRigidBodyCollision(true);
+	mLeftWeaponCapsule->SetNotifyRigidBodyCollision(true);
+
+	mRightWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
+	mLeftWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);*/
 }
 
 void AAIBoss::BeginPlay()
@@ -69,7 +75,7 @@ void AAIBoss::Attack()
 		
 	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
 		
-#endif
+#endif*/
 
 	if (IsCollision)
 	{
@@ -86,6 +92,22 @@ void AAIBoss::Attack()
 		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
 	}
 
+	/*if (OtherActor && (OtherActor != this) && OtherComp)
+	{
+		FHitResult	result;
+
+		FDamageEvent	DmgEvent;
+		result.GetActor()->TakeDamage(20.f, DmgEvent, GetController(), this);
+
+		FActorSpawnParameters SpawnParam;
+
+		SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+		AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(result.ImpactPoint, result.ImpactNormal.Rotation(), SpawnParam);
+
+		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
+		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
+	}*/
 }
 
 void AAIBoss::PlayBossAttackMontage()
