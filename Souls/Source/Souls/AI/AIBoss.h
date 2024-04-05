@@ -33,4 +33,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void Attack();
+
+public:
+	void PlayBossAttackMontage();
 };

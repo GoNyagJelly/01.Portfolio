@@ -16,6 +16,16 @@ void UBossAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	Super::NativeUpdateAnimation(DeltaSeconds);
 }
 
+void UBossAnimInstance::PlayBossAttackMontage()
+{
+	if (!Montage_IsPlaying(mBossAttackMontageArray[mBossAttackIndex]))
+	{
+		mBossAttackIndex = FMath::RandRange(0, mBossAttackMontageArray.Num() - 1);
+
+		Montage_Play(mBossAttackMontageArray[mBossAttackIndex]);
+	}
+}
+
 void UBossAnimInstance::AnimNotify_BossAttack()
 {
 	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());

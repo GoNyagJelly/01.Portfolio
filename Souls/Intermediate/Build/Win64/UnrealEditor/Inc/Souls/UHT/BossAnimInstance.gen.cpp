@@ -11,6 +11,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	SOULS_API UClass* Z_Construct_UClass_UBossAnimInstance();
 	SOULS_API UClass* Z_Construct_UClass_UBossAnimInstance_NoRegister();
 	SOULS_API UEnum* Z_Construct_UEnum_Souls_EBossAnimType();
@@ -154,6 +155,11 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_mBossAttackMontageArray_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_mBossAttackMontageArray_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_mBossAttackMontageArray;
 		static const UECodeGen_Private::FBytePropertyParams NewProp_mAnimType_Underlying;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_mAnimType_MetaData[];
@@ -180,6 +186,14 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		{ "ModuleRelativePath", "AI/BossAnimInstance.h" },
 	};
 #endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray_Inner = { "mBossAttackMontageArray", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray_MetaData[] = {
+		{ "Category", "BossAnimInstance" },
+		{ "ModuleRelativePath", "AI/BossAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray = { "mBossAttackMontageArray", nullptr, (EPropertyFlags)0x0024080000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBossAnimInstance, mBossAttackMontageArray), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray_MetaData), Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray_MetaData) };
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType_MetaData[] = {
@@ -189,6 +203,8 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 #endif
 	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType = { "mAnimType", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UBossAnimInstance, mAnimType), Z_Construct_UEnum_Souls_EBossAnimType, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType_MetaData), Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType_MetaData) }; // 1656526928
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UBossAnimInstance_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mBossAttackMontageArray,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UBossAnimInstance_Statics::NewProp_mAnimType,
 	};
@@ -235,9 +251,9 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		{ EBossAnimType_StaticEnum, TEXT("EBossAnimType"), &Z_Registration_Info_UEnum_EBossAnimType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1656526928U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 2285512799U) },
+		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 24717425U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_371786094(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_1957954981(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo));

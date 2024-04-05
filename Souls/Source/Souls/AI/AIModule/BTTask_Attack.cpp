@@ -4,6 +4,7 @@
 #include "BTTask_Attack.h"
 #include "../DefaultAIController.h"
 #include "../AIPawn.h"
+#include "../AIBoss.h"
 #include "../BossAnimInstance.h"
 
 UBTTask_Attack::UBTTask_Attack()
@@ -38,6 +39,9 @@ EBTNodeResult::Type UBTTask_Attack::ExecuteTask(UBehaviorTreeComponent& OwnerCom
 	}
 
 	Pawn->ChangeAIAnimType((uint8)EBossAnimType::Attack);
+
+	AAIBoss* ControlledPawn = Cast<AAIBoss>(Controller->GetPawn());
+	ControlledPawn->PlayBossAttackMontage();
 
 	return EBTNodeResult::InProgress;
 }
@@ -89,7 +93,7 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 
 		float Distance = FVector::Distance(AILocation, TargetLocation);
 
-		if (Distance > 300.f)
+		if (Distance > 1.f)
 		{
 			FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
 

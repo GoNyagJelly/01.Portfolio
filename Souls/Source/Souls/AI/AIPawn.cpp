@@ -58,4 +58,3 @@ float AAIPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, A
 
 	return DamageAmount;
 }
-

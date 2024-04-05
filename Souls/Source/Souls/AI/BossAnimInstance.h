@@ -22,6 +22,12 @@ class SOULS_API UBossAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 	
 protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<TObjectPtr<UAnimMontage>>	mBossAttackMontageArray;
+
+	int32	mBossAttackIndex;
+
+protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	EBossAnimType	mAnimType;
 
@@ -34,6 +40,9 @@ public:
 public:
 	virtual void NativeInitializeAnimation();
 	virtual void NativeUpdateAnimation(float DeltaSeconds);
+
+public:
+	void PlayBossAttackMontage();
 
 public:
 	UFUNCTION()

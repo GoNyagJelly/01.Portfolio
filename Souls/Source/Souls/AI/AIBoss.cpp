@@ -38,6 +38,9 @@ AAIBoss::AAIBoss()
 	mLeftWeaponCapsule->SetRelativeLocation(FVector(-106.6, 15.4, 95.5));
 	mLeftWeaponCapsule->SetRelativeRotation(FRotator(-16.2, 31.8, 77.3));
 	mLeftWeaponCapsule->SetCapsuleHalfHeight(70.f);
+
+	//mRightWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
+	//mLeftWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
 }
 
 void AAIBoss::BeginPlay()
@@ -53,19 +56,19 @@ void AAIBoss::Tick(float DeltaTime)
 void AAIBoss::Attack()
 {
 	FCollisionQueryParams	param(NAME_None, false, this);
-
+		
 	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 100.f;
 	FVector EndLocation = StartLocation + GetActorForwardVector() * 300.f;
-
+		
 	FHitResult	result;
 	bool IsCollision = GetWorld()->SweepSingleByChannel(result, StartLocation, EndLocation, FQuat::Identity, ECC_GameTraceChannel3, FCollisionShape::MakeSphere(50.f), param);
-
+		
 #if ENABLE_DRAW_DEBUG
-
+		
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
-
+		
 	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
-
+		
 #endif
 
 	if (IsCollision)
@@ -82,4 +85,10 @@ void AAIBoss::Attack()
 		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
 		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
 	}
+
+}
+
+void AAIBoss::PlayBossAttackMontage()
+{
+	mAnimInst->PlayBossAttackMontage();
 }
