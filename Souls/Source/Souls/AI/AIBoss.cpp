@@ -47,6 +47,8 @@ AAIBoss::AAIBoss()
 
 	mRightWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
 	mLeftWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);*/
+
+	mTableRowName = TEXT("Boss");
 }
 
 void AAIBoss::BeginPlay()
@@ -58,6 +60,26 @@ void AAIBoss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
+
+//void AAIBoss::Attack(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	if (OtherActor && (OtherActor != this) && OtherComp)
+//	{
+//		FDamageEvent	DmgEvent;
+//		FHitResult	result;
+//
+//		result.GetActor()->TakeDamage(20.f, DmgEvent, GetController(), this);
+//
+//		FActorSpawnParameters SpawnParam;
+//		
+//		SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+//		
+//		AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(result.ImpactPoint, result.ImpactNormal.Rotation(), SpawnParam);
+//		
+//		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
+//		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
+//	}
+//}
 
 void AAIBoss::Attack()
 {
@@ -91,23 +113,6 @@ void AAIBoss::Attack()
 		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
 		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
 	}
-
-	/*if (OtherActor && (OtherActor != this) && OtherComp)
-	{
-		FHitResult	result;
-
-		FDamageEvent	DmgEvent;
-		result.GetActor()->TakeDamage(20.f, DmgEvent, GetController(), this);
-
-		FActorSpawnParameters SpawnParam;
-
-		SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-		AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(result.ImpactPoint, result.ImpactNormal.Rotation(), SpawnParam);
-
-		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
-		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
-	}*/
 }
 
 void AAIBoss::PlayBossAttackMontage()

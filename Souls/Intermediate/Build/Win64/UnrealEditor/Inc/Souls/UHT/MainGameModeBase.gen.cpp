@@ -77,7 +77,6 @@ void EmptyLinkFunctionForGeneratedCodeMainGameModeBase() {}
 	{
 		return AMainGameModeBase::StaticClass();
 	}
-	AMainGameModeBase::AMainGameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMainGameModeBase);
 	AMainGameModeBase::~AMainGameModeBase() {}
 	struct Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_GameMode_MainGameModeBase_h_Statics

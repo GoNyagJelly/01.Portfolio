@@ -14,4 +14,6 @@ class SOULS_API AMainGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	AMainGameModeBase();
 };

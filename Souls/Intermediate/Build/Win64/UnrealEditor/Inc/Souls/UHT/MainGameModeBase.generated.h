@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_GameMode_MainGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AMainGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMainGameModeBase(AMainGameModeBase&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AMainGameModeBase); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMainGameModeBase); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMainGameModeBase) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMainGameModeBase) \
 	NO_API virtual ~AMainGameModeBase();
 
 

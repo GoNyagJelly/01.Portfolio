@@ -2,4 +2,9 @@
 
 
 #include "MainGameModeBase.h"
+#include "../Player/MainPlayerState.h"
 
+AMainGameModeBase::AMainGameModeBase()
+{
+	PlayerStateClass = AMainPlayerState::StaticClass();
+}

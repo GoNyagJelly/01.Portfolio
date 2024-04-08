@@ -5,6 +5,7 @@
 #include "PlayerAnimInstance.h"
 #include "MainPlayerController.h"
 #include "../Effect/EffectBase.h"
+#include "MainPlayerState.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -89,9 +90,12 @@ void APlayerCharacter::PlayRollMontage()
 void APlayerCharacter::NormalAttack()
 {
 	FCollisionQueryParams	param(NAME_None, false, this);
-	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 50.f;
 
-	FVector EndLocation = StartLocation + GetActorForwardVector() * 200.f;
+	AMainPlayerState* State = GetPlayerState<AMainPlayerState>();
+
+	FVector StartLocation = GetActorLocation();
+
+	FVector EndLocation = StartLocation + GetActorForwardVector() * State->mAttackDistance;
 
 	TArray<FHitResult>	resultArray;
 	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
@@ -100,7 +104,7 @@ void APlayerCharacter::NormalAttack()
 
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
 
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
 
 #endif
 
@@ -110,7 +114,7 @@ void APlayerCharacter::NormalAttack()
 		{
 			FDamageEvent	DmgEvent;
 
-			resultArray[i].GetActor()->TakeDamage(10.f, DmgEvent, GetController(), this);
+			resultArray[i].GetActor()->TakeDamage(State->mNormalAttackPoint, DmgEvent, GetController(), this);
 
 			FActorSpawnParameters SpawnParam;
 
@@ -127,9 +131,12 @@ void APlayerCharacter::NormalAttack()
 void APlayerCharacter::PowerAttack()
 {
 	FCollisionQueryParams	param(NAME_None, false, this);
-	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 50.f;
 
-	FVector EndLocation = StartLocation + GetActorForwardVector() * 200.f;
+	AMainPlayerState* State = GetPlayerState<AMainPlayerState>();
+
+	FVector StartLocation = GetActorLocation();
+
+	FVector EndLocation = StartLocation + GetActorForwardVector() * State->mAttackDistance;
 
 	TArray<FHitResult>	resultArray;
 	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
@@ -138,7 +145,7 @@ void APlayerCharacter::PowerAttack()
 
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
 
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
 
 #endif
 
@@ -148,7 +155,7 @@ void APlayerCharacter::PowerAttack()
 		{
 			FDamageEvent	DmgEvent;
 
-			resultArray[i].GetActor()->TakeDamage(30.f, DmgEvent, GetController(), this);
+			resultArray[i].GetActor()->TakeDamage(State->mPowerAttackPoint, DmgEvent, GetController(), this);
 
 			FActorSpawnParameters SpawnParam;
 

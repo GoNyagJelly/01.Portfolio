@@ -66,16 +66,16 @@
     <ClInclude Include="..\..\Source\Souls\AI\BossAnimInstance.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Souls\AI\MonsterPawn.cpp">
-      <Filter>Source\Souls\AI</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Souls\AI\MonsterPawn.h">
-      <Filter>Source\Souls\AI</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Souls\AI\DefaultAIController.cpp">
       <Filter>Source\Souls\AI</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Souls\AI\DefaultAIController.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\MonsterPawn.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\MonsterPawn.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
     <Filter Include="Source\Souls\AI\AIModule">
@@ -133,6 +133,12 @@
       <Filter>Source\Souls\Player</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Souls\Player\MainPlayerController.h">
+      <Filter>Source\Souls\Player</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\Player\MainPlayerState.cpp">
+      <Filter>Source\Souls\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\Player\MainPlayerState.h">
       <Filter>Source\Souls\Player</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Souls\Player\PlayerAnimInstance.cpp">
