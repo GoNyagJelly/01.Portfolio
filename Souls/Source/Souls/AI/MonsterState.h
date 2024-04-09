@@ -27,6 +27,9 @@ public:
 	int32	mHPMax;
 
 	UPROPERTY(EditAnywhere)
+	int32	mHP;
+
+	UPROPERTY(EditAnywhere)
 	float	mAttackDistance;
 
 protected:

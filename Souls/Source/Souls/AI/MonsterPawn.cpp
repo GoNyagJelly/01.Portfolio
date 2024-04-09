@@ -37,13 +37,6 @@ void AMonsterPawn::BeginPlay()
 	Super::BeginPlay();
 
 	mAnimInst = Cast<UBossAnimInstance>(mMesh->GetAnimInstance());
-
-	FMonsterData* MonsterData = mMonsterDataTable->FindRow<FMonsterData>(*mTableRowName, TEXT(""));
-
-	if (MonsterData)
-	{
-
-	}
 }
 
 void AMonsterPawn::OnConstruction(const FTransform& Transform)

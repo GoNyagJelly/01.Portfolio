@@ -41,6 +41,10 @@ void EmptyLinkFunctionForGeneratedCodeMonsterState() {}
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_mHPMax;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_mHP_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_mHP;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_mAttackDistance_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_mAttackDistance;
@@ -86,6 +90,13 @@ void EmptyLinkFunctionForGeneratedCodeMonsterState() {}
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMonsterState_Statics::NewProp_mHPMax = { "mHPMax", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMonsterState, mHPMax), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMonsterState_Statics::NewProp_mHPMax_MetaData), Z_Construct_UClass_UMonsterState_Statics::NewProp_mHPMax_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMonsterState_Statics::NewProp_mHP_MetaData[] = {
+		{ "Category", "MonsterState" },
+		{ "ModuleRelativePath", "AI/MonsterState.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMonsterState_Statics::NewProp_mHP = { "mHP", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMonsterState, mHP), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMonsterState_Statics::NewProp_mHP_MetaData), Z_Construct_UClass_UMonsterState_Statics::NewProp_mHP_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMonsterState_Statics::NewProp_mAttackDistance_MetaData[] = {
 		{ "Category", "MonsterState" },
 		{ "ModuleRelativePath", "AI/MonsterState.h" },
@@ -96,6 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeMonsterState() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMonsterState_Statics::NewProp_mAttackPoint,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMonsterState_Statics::NewProp_mArmorPoint,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMonsterState_Statics::NewProp_mHPMax,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMonsterState_Statics::NewProp_mHP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMonsterState_Statics::NewProp_mAttackDistance,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMonsterState_Statics::StaticCppClassTypeInfo = {
@@ -136,9 +148,9 @@ void EmptyLinkFunctionForGeneratedCodeMonsterState() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_MonsterState_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMonsterState, UMonsterState::StaticClass, TEXT("UMonsterState"), &Z_Registration_Info_UClass_UMonsterState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMonsterState), 1485888914U) },
+		{ Z_Construct_UClass_UMonsterState, UMonsterState::StaticClass, TEXT("UMonsterState"), &Z_Registration_Info_UClass_UMonsterState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMonsterState), 2837398695U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_MonsterState_h_415992792(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_MonsterState_h_390393942(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_MonsterState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_MonsterState_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
