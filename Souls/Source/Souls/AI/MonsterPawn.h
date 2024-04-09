@@ -26,6 +26,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float	mAttackDistance;
+
+	UPROPERTY(EditAnywhere)
+	float	mTraceDistance;
 };
 
 UCLASS()
@@ -35,6 +38,9 @@ class SOULS_API AMonsterPawn : public AAIPawn
 
 protected:
 	static UDataTable* mMonsterDataTable;
+
+public:
+	static const FMonsterData* FindMonsterData(const FString& Name);
 
 public:
 	AMonsterPawn();
@@ -51,6 +57,8 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+	virtual void OnConstruction(const FTransform& Transform);
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	

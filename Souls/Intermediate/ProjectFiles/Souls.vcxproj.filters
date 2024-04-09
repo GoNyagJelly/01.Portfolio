@@ -60,6 +60,12 @@
     <ClInclude Include="..\..\Source\Souls\AI\AIPawn.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\AIState.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\AIState.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Souls\AI\BossAnimInstance.cpp">
       <Filter>Source\Souls\AI</Filter>
     </ClCompile>

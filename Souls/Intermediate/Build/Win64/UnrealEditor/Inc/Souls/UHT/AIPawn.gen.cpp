@@ -15,6 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	SOULS_API UClass* Z_Construct_UClass_AAIPawn();
 	SOULS_API UClass* Z_Construct_UClass_AAIPawn_NoRegister();
+	SOULS_API UClass* Z_Construct_UClass_UAIState_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Souls();
 // End Cross Module References
 	void AAIPawn::StaticRegisterNativesAAIPawn()
@@ -43,6 +44,10 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_mMovement_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_mMovement;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_mState_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_mState;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -83,10 +88,19 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement = { "mMovement", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mMovement), Z_Construct_UClass_UFloatingPawnMovement_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIPawn_Statics::NewProp_mState_MetaData[] = {
+		{ "Category", "AIPawn" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "AI/AIPawn.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAIPawn_Statics::NewProp_mState = { "mState", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAIPawn, mState), Z_Construct_UClass_UAIState_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAIPawn_Statics::NewProp_mState_MetaData), Z_Construct_UClass_AAIPawn_Statics::NewProp_mState_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAIPawn_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mCapsule,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mMovement,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIPawn_Statics::NewProp_mState,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAIPawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAIPawn>::IsAbstract,
@@ -126,9 +140,9 @@ void EmptyLinkFunctionForGeneratedCodeAIPawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAIPawn, AAIPawn::StaticClass, TEXT("AAIPawn"), &Z_Registration_Info_UClass_AAIPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIPawn), 4015867034U) },
+		{ Z_Construct_UClass_AAIPawn, AAIPawn::StaticClass, TEXT("AAIPawn"), &Z_Registration_Info_UClass_AAIPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAIPawn), 1189136329U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_3513447540(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_2695826202(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_AI_AIPawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -26,6 +26,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UFloatingPawnMovement* mMovement;
 
+	UPROPERTY(EditAnywhere)
+	class UAIState* mState;
+
 	bool	mBossAttackEnd;
 
 public:
@@ -57,7 +60,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
+	virtual void OnConstruction(const FTransform& Transform);
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

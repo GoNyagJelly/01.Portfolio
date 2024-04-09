@@ -43,6 +43,11 @@ void AAIPawn::BeginPlay()
 	
 }
 
+void AAIPawn::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+}
+
 // Called every frame
 void AAIPawn::Tick(float DeltaTime)
 {

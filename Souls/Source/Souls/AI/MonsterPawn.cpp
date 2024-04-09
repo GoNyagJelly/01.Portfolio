@@ -4,12 +4,20 @@
 #include "MonsterPawn.h"
 #include "DefaultAIController.h"
 #include "BossAnimInstance.h"
+#include "MonsterState.h"
 
 UDataTable* AMonsterPawn::mMonsterDataTable = nullptr;
+
+const FMonsterData* AMonsterPawn::FindMonsterData(const FString& Name)
+{
+	return mMonsterDataTable->FindRow<FMonsterData>(*Name, TEXT(""));
+}
 
 AMonsterPawn::AMonsterPawn()
 {
 	PrimaryActorTick.bCanEverTick = true;
+
+	mState = CreateDefaultSubobject<UMonsterState>(TEXT("MonsterState"));
 
 	AIControllerClass = ADefaultAIController::StaticClass();
 
@@ -36,6 +44,13 @@ void AMonsterPawn::BeginPlay()
 	{
 
 	}
+}
+
+void AMonsterPawn::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+
+	mState->mDataTableRowName = mTableRowName;
 }
 
 void AMonsterPawn::Tick(float DeltaTime)
