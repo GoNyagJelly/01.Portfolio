@@ -5,6 +5,7 @@
 #include "../DefaultAIController.h"
 #include "../AIPawn.h"
 #include "../BossAnimInstance.h"
+#include "../MonsterState.h"
 
 UBTTask_TraceTarget::UBTTask_TraceTarget()
 {
@@ -102,7 +103,9 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 		Distance -= TargetCapsule->GetScaledCapsuleRadius();
 	}*/
 
-	if (Distance <= 300.f)
+	UMonsterState* State = Pawn->GetState<UMonsterState>();
+
+	if (Distance <= State -> mAttackDistance)
 	{
 		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
 

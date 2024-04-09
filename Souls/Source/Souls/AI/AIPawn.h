@@ -16,6 +16,8 @@ public:
 	// Sets default values for this pawn's properties
 	AAIPawn();
 
+public:
+	void AdjustScale();
 protected:
 	UPROPERTY(EditAnywhere)
 	UCapsuleComponent* mCapsule;
@@ -55,6 +57,14 @@ public:
 
 public:
 	virtual void ChangeAIAnimType(uint8 AnimType);
+
+public:
+	template <typename T>
+	T* GetState()
+	{
+		return Cast<T>(mState);
+	}
+
 
 protected:
 	// Called when the game starts or when spawned

@@ -6,6 +6,7 @@
 #include "../AIPawn.h"
 #include "../AIBoss.h"
 #include "../BossAnimInstance.h"
+#include "../MonsterState.h"
 
 UBTTask_Attack::UBTTask_Attack()
 {
@@ -93,7 +94,9 @@ void UBTTask_Attack::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 
 		float Distance = FVector::Distance(AILocation, TargetLocation);
 
-		if (Distance > 300.f)
+		UMonsterState* State = Pawn->GetState<UMonsterState>();
+
+		if (Distance > State -> mAttackDistance)
 		{
 			FinishLatentTask(OwnerComp, EBTNodeResult::Failed);
 

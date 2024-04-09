@@ -60,6 +60,12 @@
     <ClInclude Include="..\..\Source\Souls\AI\AIPawn.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\AISpawnPoint.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\AISpawnPoint.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Souls\AI\AIState.cpp">
       <Filter>Source\Souls\AI</Filter>
     </ClCompile>
@@ -82,6 +88,12 @@
       <Filter>Source\Souls\AI</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Souls\AI\MonsterPawn.h">
+      <Filter>Source\Souls\AI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\AI\MonsterState.cpp">
+      <Filter>Source\Souls\AI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\AI\MonsterState.h">
       <Filter>Source\Souls\AI</Filter>
     </ClInclude>
     <Filter Include="Source\Souls\AI\AIModule">
@@ -158,16 +170,6 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Souls\Player\PlayerCharacter.h">
       <Filter>Source\Souls\Player</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\Souls\AI\MonsterState.cpp">
-      <Filter>Source\Souls\AI</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\Souls\AI\MonsterState.h">
-      <Filter>Source\Souls\AI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

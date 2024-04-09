@@ -24,12 +24,23 @@ AAIPawn::AAIPawn()
 
 	mMesh->SetupAttachment(mCapsule);
 
+	AdjustScale();
+
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 
 	static ConstructorHelpers::FClassFinder<AAIController>	AIClass(TEXT("/Script/Engine.Blueprint'/Game/Blueprint/Main/AI/BP_DefaultAIController.BP_DefaultAIController_C'"));
 
 	if (AIClass.Succeeded())
 		AIControllerClass = AIClass.Class;
+}
+
+void AAIPawn::AdjustScale()
+{
+	FVector CurrentScale = GetActorScale3D();
+
+	FVector NewScale = CurrentScale * 1.5f;
+
+	SetActorScale3D(NewScale);
 }
 
 void AAIPawn::ChangeAIAnimType(uint8 AnimType)

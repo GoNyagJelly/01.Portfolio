@@ -5,6 +5,7 @@
 #include "DefaultAIController.h"
 #include "BossAnimInstance.h"
 #include "../Effect/EffectBase.h"
+#include "MonsterState.h"
 
 AAIBoss::AAIBoss()
 {
@@ -85,8 +86,10 @@ void AAIBoss::Attack()
 {
 	FCollisionQueryParams	param(NAME_None, false, this);
 		
-	FVector StartLocation = GetActorLocation() + GetActorForwardVector() * 100.f;
-	FVector EndLocation = StartLocation + GetActorForwardVector() * 300.f;
+	UMonsterState* State = GetState<UMonsterState>();
+
+	FVector StartLocation = GetActorLocation();
+	FVector EndLocation = StartLocation + GetActorForwardVector() * State->mAttackDistance;
 		
 	FHitResult	result;
 	bool IsCollision = GetWorld()->SweepSingleByChannel(result, StartLocation, EndLocation, FQuat::Identity, ECC_GameTraceChannel3, FCollisionShape::MakeSphere(50.f), param);
@@ -95,14 +98,14 @@ void AAIBoss::Attack()
 		
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
 		
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, 150.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
 		
 #endif*/
 
 	if (IsCollision)
 	{
 		FDamageEvent	DmgEvent;
-		result.GetActor()->TakeDamage(20.f, DmgEvent, GetController(), this);
+		result.GetActor()->TakeDamage(State->mAttackPoint, DmgEvent, GetController(), this);
 
 		FActorSpawnParameters SpawnParam;
 

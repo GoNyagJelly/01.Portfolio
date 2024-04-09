@@ -4,6 +4,7 @@
 #include "BTService_DetectTarget.h"
 #include "../DefaultAIController.h"
 #include "../AIPawn.h"
+#include "../AIState.h"
 
 UBTService_DetectTarget::UBTService_DetectTarget()
 {
@@ -29,14 +30,21 @@ void UBTService_DetectTarget::TickNode(UBehaviorTreeComponent& OwnerComp, uint8*
 
 	FCollisionQueryParams	param(NAME_None, false, Pawn);
 
+	UAIState* AIState = Pawn->GetState<UAIState>();
+
+	if (!IsValid(AIState))
+	{
+		return;
+	}
+
 	FHitResult	result;
-	bool IsCollision = GetWorld()->SweepSingleByChannel(result, AILocation, AILocation, FQuat::Identity, ECC_GameTraceChannel2, FCollisionShape::MakeSphere(1800.f), param);
+	bool IsCollision = GetWorld()->SweepSingleByChannel(result, AILocation, AILocation, FQuat::Identity, ECC_GameTraceChannel2, FCollisionShape::MakeSphere(AIState->mInteractionDistance), param);
 
 #if ENABLE_DRAW_DEBUG
 
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
 
-	DrawDebugSphere(GetWorld(), AILocation, 1800.f, 20, DrawColor, false, 0.35f);
+	DrawDebugSphere(GetWorld(), AILocation, AIState->mInteractionDistance, 20, DrawColor, false, 0.35f);
 #endif
 
 	if (IsCollision)

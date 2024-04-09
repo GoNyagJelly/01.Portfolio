@@ -36,6 +36,10 @@ void AMonsterPawn::BeginPlay()
 {
 	Super::BeginPlay();
 
+	const FMonsterData* Data = AMonsterPawn::FindMonsterData(mTableRowName);
+
+	mMovement->MaxSpeed = Data->mMoveSpeed;
+
 	mAnimInst = Cast<UBossAnimInstance>(mMesh->GetAnimInstance());
 }
 
