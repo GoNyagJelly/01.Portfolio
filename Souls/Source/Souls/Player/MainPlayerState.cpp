@@ -2,6 +2,8 @@
 
 
 #include "MainPlayerState.h"
+#include "MainPlayerController.h"
+#include "../UI/MainViewportWidget.h"
 
 AMainPlayerState::AMainPlayerState()
 {
@@ -29,4 +31,9 @@ void AMainPlayerState::BeginPlay()
 		mMoveSpeed = Data->mMoveSpeed;
 		mAttackDistance = Data->mAttackDistance;
 	}
+
+	AMainPlayerController* Controller = GetWorld()->GetWorld()->GetFirstPlayerController<AMainPlayerController>();
+
+	Controller->GetMainWidget()->SetHP(mHP, mHPMax);
+	Controller->GetMainWidget()->SetMP(mMP, mMPMax);
 }

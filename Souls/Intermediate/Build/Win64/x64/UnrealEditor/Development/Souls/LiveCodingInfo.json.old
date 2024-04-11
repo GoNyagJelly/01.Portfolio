@@ -4,6 +4,7 @@
 		"Module.Souls.cpp.obj": [
 			"AIBoss.gen.cpp.obj",
 			"AIPawn.gen.cpp.obj",
+			"AISpawnPoint.gen.cpp.obj",
 			"AIState.gen.cpp.obj",
 			"BasicInputDataConfig.gen.cpp.obj",
 			"BossAnimInstance.gen.cpp.obj",
@@ -16,6 +17,7 @@
 			"MainGameModeBase.gen.cpp.obj",
 			"MainPlayerController.gen.cpp.obj",
 			"MainPlayerState.gen.cpp.obj",
+			"MainViewportWidget.gen.cpp.obj",
 			"MonsterPawn.gen.cpp.obj",
 			"MonsterState.gen.cpp.obj",
 			"PlayerAnimInstance.gen.cpp.obj",
@@ -26,6 +28,7 @@
 			"BTTask_Attack.cpp.obj",
 			"BTTask_TraceTarget.cpp.obj",
 			"AIPawn.cpp.obj",
+			"AISpawnPoint.cpp.obj",
 			"AIState.cpp.obj",
 			"BossAnimInstance.cpp.obj",
 			"DefaultAIController.cpp.obj",
@@ -39,7 +42,8 @@
 			"MainPlayerState.cpp.obj",
 			"PlayerAnimInstance.cpp.obj",
 			"PlayerCharacter.cpp.obj",
-			"Souls.cpp.obj"
+			"Souls.cpp.obj",
+			"MainViewportWidget.cpp.obj"
 		]
 	}
 }

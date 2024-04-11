@@ -18,6 +18,8 @@ public:
 	AMainPlayerController();
 
 private:
+	TSubclassOf<UUserWidget>	mMainWidgetClass;
+	class UMainViewportWidget* mMainWidget;
 	float	mMoveDir;
 
 public:
@@ -26,6 +28,11 @@ public:
 	bool	mPowerAttackEnable;
 
 public:
+	class UMainViewportWidget* GetMainWidget()
+	{
+		return mMainWidget;
+	}
+
 	float GetMoveDir()
 	{
 		return mMoveDir;

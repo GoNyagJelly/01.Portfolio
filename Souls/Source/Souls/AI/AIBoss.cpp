@@ -92,13 +92,13 @@ void AAIBoss::Attack()
 	FVector EndLocation = StartLocation + GetActorForwardVector() * State->mAttackDistance;
 		
 	FHitResult	result;
-	bool IsCollision = GetWorld()->SweepSingleByChannel(result, StartLocation, EndLocation, FQuat::Identity, ECC_GameTraceChannel3, FCollisionShape::MakeSphere(50.f), param);
+	bool IsCollision = GetWorld()->SweepSingleByChannel(result, StartLocation, EndLocation, FQuat::Identity, ECC_GameTraceChannel3, FCollisionShape::MakeSphere(100.f), param);
 		
 #if ENABLE_DRAW_DEBUG
 		
 	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
 		
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
 		
 #endif*/
 

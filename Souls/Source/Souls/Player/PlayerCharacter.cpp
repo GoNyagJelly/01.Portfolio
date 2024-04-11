@@ -38,6 +38,8 @@ void APlayerCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	mAnimInst = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
+
+	mState = GetPlayerState<AMainPlayerState>();
 }
 
 // Called every frame
@@ -59,6 +61,17 @@ float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 
 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
+
+	int32 Dmg = DamageAmount - mState->mArmorPoint;
+
+	Dmg = Dmg < 1 ? 1 : Dmg;
+
+	mState->mHP -= DamageAmount;
+
+	if (mState->mHP <= 0)
+	{
+		mState->mHP = 0;
+	}
 
 	return DamageAmount;
 }

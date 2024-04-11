@@ -4,12 +4,23 @@
 #include "MainPlayerController.h"
 #include "../Input/BasicInputDataConfig.h"
 #include "PlayerCharacter.h"
+#include "../UI/MainViewportWidget.h"
 
 AMainPlayerController::AMainPlayerController()
 {
 	mMoveEnable = true;
 	mJumpEnable = true;
 	mPowerAttackEnable = true;
+
+	static ConstructorHelpers::FClassFinder<UUserWidget>	MainWidgetClass(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Blueprint/Main/UI/UI_ManViewport.UI_ManViewport_C'"));
+
+	if (MainWidgetClass.Succeeded())
+		mMainWidgetClass = MainWidgetClass.Class;
+
+	/*FInputModeGameAndUI input;
+	SetInputMode(input);
+
+	bShowMouseCursor = false;*/
 }
 
 void AMainPlayerController::BeginPlay()
@@ -19,6 +30,9 @@ void AMainPlayerController::BeginPlay()
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 	const UMainInputDataConfig* MainInputDataConfig = GetDefault<UMainInputDataConfig>();
 	Subsystem->AddMappingContext(MainInputDataConfig->DefaultContext, 0);
+
+	mMainWidget = CreateWidget<UMainViewportWidget>(GetWorld(), mMainWidgetClass);
+	mMainWidget->AddToViewport();
 }
 
 void AMainPlayerController::SetupInputComponent()

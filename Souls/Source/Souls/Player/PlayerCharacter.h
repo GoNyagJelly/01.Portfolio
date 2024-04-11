@@ -24,6 +24,8 @@ protected:
 
 	class UPlayerAnimInstance* mAnimInst;
 
+	class AMainPlayerState* mState;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

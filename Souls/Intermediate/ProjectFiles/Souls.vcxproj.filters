@@ -171,5 +171,20 @@
     <ClInclude Include="..\..\Source\Souls\Player\PlayerCharacter.h">
       <Filter>Source\Souls\Player</Filter>
     </ClInclude>
+    <Filter Include="Source\Souls\UI">
+      <UniqueIdentifier>{3AC49073-739B-3213-A92F-2DD54C8FA0EE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Souls\UI\MainViewportWidget.cpp">
+      <Filter>Source\Souls\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\UI\MainViewportWidget.h">
+      <Filter>Source\Souls\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Souls\UI\PlayerHUDWidget.cpp">
+      <Filter>Source\Souls\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Souls\UI\PlayerHUDWidget.h">
+      <Filter>Source\Souls\UI</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
