@@ -6,6 +6,7 @@
 #include "MainPlayerController.h"
 #include "../Effect/EffectBase.h"
 #include "MainPlayerState.h"
+#include "../UI/MainViewportWidget.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -73,6 +74,8 @@ float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 		mState->mHP = 0;
 	}
 
+	GetController<AMainPlayerController>()->GetMainWidget()->SetHP(mState->mHP, mState->mHPMax);
+
 	return DamageAmount;
 }
 
@@ -97,7 +100,18 @@ void APlayerCharacter::PlayJump()
 
 void APlayerCharacter::PlayRollMontage()
 {
-	mAnimInst->PlayRollMontage();
+	mState->mMP -= 10;
+
+	if (mState->mMP <= 0)
+	{
+		mState->mMP = 0;
+	}
+
+	GetController<AMainPlayerController>()->GetMainWidget()->SetMP(mState->mMP, mState->mMPMax);
+	if (mState->mMP >= 10)
+	{
+		mAnimInst->PlayRollMontage();
+	}
 }
 
 void APlayerCharacter::NormalAttack()

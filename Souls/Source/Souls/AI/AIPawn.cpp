@@ -3,6 +3,9 @@
 
 #include "AIPawn.h"
 #include "DefaultAIController.h"
+#include "MonsterState.h"
+#include "../Player/MainPlayerController.h"
+#include "../UI/MainViewportWidget.h"
 
 // Sets default values
 AAIPawn::AAIPawn()
@@ -51,7 +54,6 @@ void AAIPawn::ChangeAIAnimType(uint8 AnimType)
 void AAIPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void AAIPawn::OnConstruction(const FTransform& Transform)
@@ -69,6 +71,21 @@ void AAIPawn::Tick(float DeltaTime)
 float AAIPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+
+	/*UMonsterState* State = GetState<UMonsterState>();
+
+	int32 Dmg = DamageAmount- State->mArmorPoint;
+
+	Dmg = Dmg < 1 ? 1 : Dmg;
+
+	State->mHP -= Dmg;
+
+	if (State->mHP <= 0)
+	{
+		State->mHP = 0;
+	}
+
+	GetController<ADefaultAIController>()->GetMainWidget()->SetBossHP(State->mHP, State->mHPMax);*/
 
 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
 

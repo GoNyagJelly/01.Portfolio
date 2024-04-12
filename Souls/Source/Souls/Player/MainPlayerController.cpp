@@ -49,7 +49,7 @@ void AMainPlayerController::SetupInputComponent()
 	EnhancedInputComponent->BindAction(MainInputDataConfig->NormalAttack, ETriggerEvent::Triggered, this, &ThisClass::OnNormalAttack);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->PowerAttack, ETriggerEvent::Triggered, this, &ThisClass::OnPowerAttack);
 	EnhancedInputComponent->BindAction(MainInputDataConfig->Jump, ETriggerEvent::Triggered, this, &ThisClass::OnJump);
-	EnhancedInputComponent->BindAction(MainInputDataConfig->Roll, ETriggerEvent::Triggered, this, &ThisClass::OnRoll);
+	EnhancedInputComponent->BindAction(MainInputDataConfig->Roll, ETriggerEvent::Completed, this, &ThisClass::OnRoll);
 }
 
 void AMainPlayerController::OnMove(const FInputActionValue& InputActionValue)

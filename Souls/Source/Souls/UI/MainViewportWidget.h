@@ -18,8 +18,12 @@ protected:
 	UPROPERTY(meta=(BindWidget))
 	class UPlayerHUDWidget* UI_PlayerHUD;
 
+	UPROPERTY(meta = (BindWidget))
+	class UBossHUDWidget* UI_BossHUD;
+
 public:
 	void SetName(const FString& Text);
 	void SetHP(int32 HP, int32 HPMax);
 	void SetMP(int32 MP, int32 MPMax);
+	void SetBossHP(int32 HP, int32 HPMax);
 };

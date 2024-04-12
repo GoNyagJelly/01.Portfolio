@@ -32,7 +32,7 @@ void AMainPlayerState::BeginPlay()
 		mAttackDistance = Data->mAttackDistance;
 	}
 
-	AMainPlayerController* Controller = GetWorld()->GetWorld()->GetFirstPlayerController<AMainPlayerController>();
+	AMainPlayerController* Controller = GetWorld()->GetFirstPlayerController<AMainPlayerController>();
 
 	Controller->GetMainWidget()->SetHP(mHP, mHPMax);
 	Controller->GetMainWidget()->SetMP(mMP, mMPMax);

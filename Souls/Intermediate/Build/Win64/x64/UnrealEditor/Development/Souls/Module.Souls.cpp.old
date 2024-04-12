@@ -19,6 +19,7 @@
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Intermediate/Build/Win64/UnrealEditor/Inc/Souls/UHT/MonsterState.gen.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Intermediate/Build/Win64/UnrealEditor/Inc/Souls/UHT/PlayerAnimInstance.gen.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Intermediate/Build/Win64/UnrealEditor/Inc/Souls/UHT/PlayerCharacter.gen.cpp"
+#include "C:/Users/kwon/Desktop/Portfolio/Souls/Intermediate/Build/Win64/UnrealEditor/Inc/Souls/UHT/PlayerHUDWidget.gen.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Intermediate/Build/Win64/UnrealEditor/Inc/Souls/UHT/Souls.init.gen.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/AI/AIBoss.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/AI/AIModule/BTService_DetectTarget.cpp"
@@ -41,3 +42,4 @@
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/Player/PlayerCharacter.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/Souls.cpp"
 #include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/UI/MainViewportWidget.cpp"
+#include "C:/Users/kwon/Desktop/Portfolio/Souls/Source/Souls/UI/PlayerHUDWidget.cpp"

@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMainViewportWidget() {}
 // Cross Module References
+	SOULS_API UClass* Z_Construct_UClass_UBossHUDWidget_NoRegister();
 	SOULS_API UClass* Z_Construct_UClass_UMainViewportWidget();
 	SOULS_API UClass* Z_Construct_UClass_UMainViewportWidget_NoRegister();
 	SOULS_API UClass* Z_Construct_UClass_UPlayerHUDWidget_NoRegister();
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeMainViewportWidget() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_UI_PlayerHUD_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_UI_PlayerHUD;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_UI_BossHUD_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_UI_BossHUD;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -59,8 +64,17 @@ void EmptyLinkFunctionForGeneratedCodeMainViewportWidget() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_PlayerHUD = { "UI_PlayerHUD", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainViewportWidget, UI_PlayerHUD), Z_Construct_UClass_UPlayerHUDWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_PlayerHUD_MetaData), Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_PlayerHUD_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_BossHUD_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UI/MainViewportWidget.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_BossHUD = { "UI_BossHUD", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainViewportWidget, UI_BossHUD), Z_Construct_UClass_UBossHUDWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_BossHUD_MetaData), Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_BossHUD_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMainViewportWidget_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_PlayerHUD,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainViewportWidget_Statics::NewProp_UI_BossHUD,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMainViewportWidget_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMainViewportWidget>::IsAbstract,
@@ -101,9 +115,9 @@ void EmptyLinkFunctionForGeneratedCodeMainViewportWidget() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_MainViewportWidget_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMainViewportWidget, UMainViewportWidget::StaticClass, TEXT("UMainViewportWidget"), &Z_Registration_Info_UClass_UMainViewportWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainViewportWidget), 1697319848U) },
+		{ Z_Construct_UClass_UMainViewportWidget, UMainViewportWidget::StaticClass, TEXT("UMainViewportWidget"), &Z_Registration_Info_UClass_UMainViewportWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainViewportWidget), 1770430943U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_MainViewportWidget_h_801637868(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_MainViewportWidget_h_3829854245(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_MainViewportWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_MainViewportWidget_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

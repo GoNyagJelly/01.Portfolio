@@ -14,9 +14,17 @@ class SOULS_API ADefaultAIController : public AAIController
 {
 	GENERATED_BODY()
 	
-
 public:
 	ADefaultAIController();
+
+private:
+	class UMainViewportWidget* mMainWidget;
+
+public:
+	class UMainViewportWidget* GetMainWidget()
+	{
+		return mMainWidget;
+	}
 
 protected:
 	UBehaviorTree* mBehaviorTree;
