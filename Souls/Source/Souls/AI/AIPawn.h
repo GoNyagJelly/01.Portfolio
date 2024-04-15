@@ -16,6 +16,9 @@ public:
 	// Sets default values for this pawn's properties
 	AAIPawn();
 
+protected:
+	class UBossAnimInstance* mAnimInst;
+
 public:
 	void AdjustScale();
 protected:

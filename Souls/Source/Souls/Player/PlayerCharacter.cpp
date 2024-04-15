@@ -72,6 +72,8 @@ float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 	if (mState->mHP <= 0)
 	{
 		mState->mHP = 0;
+
+		mAnimInst->PlayDeathMontage();
 	}
 
 	GetController<AMainPlayerController>()->GetMainWidget()->SetHP(mState->mHP, mState->mHPMax);
@@ -194,5 +196,10 @@ void APlayerCharacter::PowerAttack()
 			Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonGrux/Characters/Heroes/Grux/Sounds/SoundWaves/Grux_Effort_Pain_01.Grux_Effort_Pain_01'"));
 		}
 	}
+}
+
+void APlayerCharacter::Death()
+{
+
 }
 

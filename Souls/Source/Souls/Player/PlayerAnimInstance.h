@@ -81,6 +81,7 @@ public:
 	void PlayPowerAttackMontage();
 	void PlayJump();
 	void PlayRollMontage();
+	void PlayDeathMontage();
 
 	UFUNCTION()
 	void AnimNotify_NormalAttack();

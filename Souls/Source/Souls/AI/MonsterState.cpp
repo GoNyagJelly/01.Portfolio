@@ -3,9 +3,8 @@
 
 #include "MonsterState.h"
 #include "MonsterPawn.h"
-#include "DefaultAIController.h"
+#include "../Player/MainPlayerController.h"
 #include "../UI/MainViewportWidget.h"
-#include "AIPawn.h"
 
 UMonsterState::UMonsterState()
 {
@@ -28,7 +27,7 @@ void UMonsterState::BeginPlay()
 		mAttackDistance = Data->mAttackDistance;
 	}
 
-	/*ADefaultAIController* Controller = GetController()->
+	/*AMainPlayerController* Controller = GetWorld()->GetFirstPlayerController<AMainPlayerController>();
 
 	Controller->GetMainWidget()->SetBossHP(mHP, mHPMax);*/
 }

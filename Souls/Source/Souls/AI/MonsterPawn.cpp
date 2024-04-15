@@ -59,3 +59,8 @@ void AMonsterPawn::Attack()
 {
 }
 
+void AMonsterPawn::Death()
+{
+	Destroy();
+}
+

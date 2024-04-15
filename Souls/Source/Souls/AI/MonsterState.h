@@ -5,9 +5,6 @@
 #include "AIState.h"
 #include "MonsterState.generated.h"
 
-/**
- * 
- */
 UCLASS( ClassGroup = (Custom), meta = (BlueprintSpawnableComponent) )
 class SOULS_API UMonsterState : public UAIState
 {

@@ -43,6 +43,7 @@ public:
 
 public:
 	void PlayBossAttackMontage();
+	void PlayDeathMontage();
 
 public:
 	UFUNCTION()

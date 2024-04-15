@@ -78,15 +78,15 @@ void EmptyLinkFunctionForGeneratedCodeBossHUDWidget() {}
 	UBossHUDWidget::UBossHUDWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UBossHUDWidget);
 	UBossHUDWidget::~UBossHUDWidget() {}
-	struct Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_BossHUDWidget_h_Statics
+	struct Z_CompiledInDeferFile_FID_Souls_Source_Souls_UI_BossHUDWidget_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_UBossHUDWidget, UBossHUDWidget::StaticClass, TEXT("UBossHUDWidget"), &Z_Registration_Info_UClass_UBossHUDWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossHUDWidget), 1038620625U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_BossHUDWidget_h_3240273999(TEXT("/Script/Souls"),
-		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_UI_BossHUDWidget_h_3240273999(TEXT("/Script/Souls"),
+		Z_CompiledInDeferFile_FID_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_UI_BossHUDWidget_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

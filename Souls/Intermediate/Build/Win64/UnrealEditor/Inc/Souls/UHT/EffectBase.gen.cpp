@@ -166,15 +166,15 @@ void EmptyLinkFunctionForGeneratedCodeEffectBase() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEffectBase);
 	AEffectBase::~AEffectBase() {}
-	struct Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_Effect_EffectBase_h_Statics
+	struct Z_CompiledInDeferFile_FID_Souls_Source_Souls_Effect_EffectBase_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_AEffectBase, AEffectBase::StaticClass, TEXT("AEffectBase"), &Z_Registration_Info_UClass_AEffectBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEffectBase), 3573822496U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_Effect_EffectBase_h_3550061901(TEXT("/Script/Souls"),
-		Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_kwon_Desktop_Portfolio_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_Effect_EffectBase_h_3550061901(TEXT("/Script/Souls"),
+		Z_CompiledInDeferFile_FID_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_Effect_EffectBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

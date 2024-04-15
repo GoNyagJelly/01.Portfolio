@@ -48,4 +48,5 @@ public:
 public:
 	virtual void NormalAttack();
 	virtual void PowerAttack();
+	virtual void Death();
 };

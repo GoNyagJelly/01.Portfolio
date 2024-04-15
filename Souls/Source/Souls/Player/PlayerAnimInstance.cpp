@@ -143,6 +143,15 @@ void UPlayerAnimInstance::PlayRollMontage()
 	}
 }
 
+void UPlayerAnimInstance::PlayDeathMontage()
+{
+	mAnimType = EPlayerAnimType::Death;
+
+	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
+
+	PlayerCharacter->Death();
+}
+
 void UPlayerAnimInstance::AnimNotify_PowerAttack()
 {
 	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
