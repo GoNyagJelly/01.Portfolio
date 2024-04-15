@@ -26,15 +26,6 @@ void UBossAnimInstance::PlayBossAttackMontage()
 	}
 }
 
-void UBossAnimInstance::PlayDeathMontage()
-{
-	mAnimType = EBossAnimType::Death;
-
-	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());
-
-	Pawn->Death();
-}
-
 void UBossAnimInstance::AnimNotify_BossAttack()
 {
 	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());

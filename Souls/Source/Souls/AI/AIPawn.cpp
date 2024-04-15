@@ -73,24 +73,5 @@ float AAIPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, A
 {
 	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 
-	UMonsterState* State = GetState<UMonsterState>();
-
-	int32 Dmg = DamageAmount- State->mArmorPoint;
-
-	Dmg = Dmg < 1 ? 1 : Dmg;
-
-	State->mHP -= Dmg;
-
-	if (State->mHP <= 0)
-	{
-		State->mHP = 0;
-
-		mAnimInst->PlayDeathMontage();
-	}
-
-	GetController<AMainPlayerController>()->GetMainWidget()->SetBossHP(State->mHP, State->mHPMax);
-
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
-
 	return DamageAmount;
 }

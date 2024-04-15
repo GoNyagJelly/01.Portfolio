@@ -55,12 +55,41 @@ void AMonsterPawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent,
+		EventInstigator, DamageCauser);
+
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
+	/*UMonsterState* State = GetState<UMonsterState>();
+
+	int32 Dmg = DamageAmount - State->mArmorPoint;
+
+	Dmg = Dmg < 1 ? 1 : Dmg;
+
+	State->mHP -= Dmg;
+
+	if (State->mHP <= 0)
+	{
+		State->mHP = 0;
+
+		mAnimInst->PlayDeathMontage();
+	}
+
+	GetController<AMainPlayerController>()->GetMainWidget()->SetBossHP(State->mHP, State->mHPMax);*/
+
+	mMonsterState->mHP -= DamageAmount;
+
+	if (mMonsterState->mHP <= 0)
+	{
+		mMonsterState->mHP = 0;
+
+		mAnimInst->ChangeAnimType(EBossAnimType::Death);
+	}
+
+	return DamageAmount;
+}
+
 void AMonsterPawn::Attack()
 {
 }
-
-void AMonsterPawn::Death()
-{
-	Destroy();
-}
-
