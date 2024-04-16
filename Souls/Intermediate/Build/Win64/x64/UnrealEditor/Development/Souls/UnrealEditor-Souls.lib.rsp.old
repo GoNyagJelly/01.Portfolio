@@ -13,5 +13,7 @@
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\DefaultAIController.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\MonsterPawn.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\MonsterState.cpp.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BossAnimInstance.gen.cpp.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\Souls.init.gen.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\Default.rc2.res"
 /OUT:"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\UnrealEditor-Souls.lib"

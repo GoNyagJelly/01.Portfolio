@@ -264,6 +264,7 @@
 /I "Runtime\AIModule\Classes"
 /I "Runtime\AIModule\Public"
 /I "D:\Portfolio\Souls\Intermediate\Build\Win64\UnrealEditor\Inc\Souls\UHT"
+/I "D:\Portfolio\Souls\Source"
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
