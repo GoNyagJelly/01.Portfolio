@@ -17,15 +17,6 @@ class SOULS_API ADefaultAIController : public AAIController
 public:
 	ADefaultAIController();
 
-private:
-	class UMainViewportWidget* mMainWidget;
-
-public:
-	class UMainViewportWidget* GetMainWidget()
-	{
-		return mMainWidget;
-	}
-
 protected:
 	UBehaviorTree* mBehaviorTree;
 	UBlackboardData* mBlackBoard;

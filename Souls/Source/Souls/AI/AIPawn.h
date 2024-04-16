@@ -36,7 +36,14 @@ protected:
 
 	bool	mBossAttackEnd;
 
+	class AAISpawnPoint* mSpawnPoint;
+
 public:
+	void SetSpawnPoint(class AAISpawnPoint* Point)
+	{
+		mSpawnPoint = Point;
+	}
+
 	void SetBossAttackEnd(bool End)
 	{
 		mBossAttackEnd = End;
@@ -71,6 +78,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason);
 
 public:
 	virtual void OnConstruction(const FTransform& Transform);

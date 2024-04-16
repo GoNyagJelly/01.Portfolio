@@ -50,4 +50,7 @@ public:
 
 	UFUNCTION()
 	void AnimNotify_BossAttackEnd();
+
+	UFUNCTION()
+	void AnimNotify_DeathEnd();
 };

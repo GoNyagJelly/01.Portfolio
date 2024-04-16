@@ -31,9 +31,6 @@
 			"BTTask_TraceTarget.cpp.obj",
 			"AISpawnPoint.cpp.obj",
 			"AIState.cpp.obj",
-			"BossAnimInstance.cpp.obj",
-			"DefaultAIController.cpp.obj",
-			"MonsterState.cpp.obj",
 			"EffectBase.cpp.obj",
 			"GameInfo.cpp.obj",
 			"MainGameModeBase.cpp.obj",
@@ -47,7 +44,10 @@
 			"MainViewportWidget.cpp.obj",
 			"PlayerHUDWidget.cpp.obj",
 			"AIPawn.cpp.obj",
-			"MonsterPawn.cpp.obj"
+			"BossAnimInstance.cpp.obj",
+			"DefaultAIController.cpp.obj",
+			"MonsterPawn.cpp.obj",
+			"MonsterState.cpp.obj"
 		]
 	}
 }

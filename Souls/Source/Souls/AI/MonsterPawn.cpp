@@ -19,6 +19,8 @@ AMonsterPawn::AMonsterPawn()
 
 	mState = CreateDefaultSubobject<UMonsterState>(TEXT("MonsterState"));
 
+	mMonsterState = Cast<UMonsterState>(mState);
+
 	AIControllerClass = ADefaultAIController::StaticClass();
 
 	static ConstructorHelpers::FObjectFinder<UDataTable>	MonsterTable(TEXT("/Script/Engine.DataTable'/Game/Blueprint/Main/Boss/DT_MonsterData.DT_MonsterData'"));
@@ -61,29 +63,11 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 		EventInstigator, DamageCauser);
 
 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
-	/*UMonsterState* State = GetState<UMonsterState>();
-
-	int32 Dmg = DamageAmount - State->mArmorPoint;
-
-	Dmg = Dmg < 1 ? 1 : Dmg;
-
-	State->mHP -= Dmg;
-
-	if (State->mHP <= 0)
-	{
-		State->mHP = 0;
-
-		mAnimInst->PlayDeathMontage();
-	}
-
-	GetController<AMainPlayerController>()->GetMainWidget()->SetBossHP(State->mHP, State->mHPMax);*/
-
+	
 	mMonsterState->mHP -= DamageAmount;
 
 	if (mMonsterState->mHP <= 0)
 	{
-		mMonsterState->mHP = 0;
-
 		mAnimInst->ChangeAnimType(EBossAnimType::Death);
 	}
 

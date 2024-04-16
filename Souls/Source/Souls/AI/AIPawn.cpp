@@ -3,10 +3,11 @@
 
 #include "AIPawn.h"
 #include "DefaultAIController.h"
-#include "MonsterState.h"
-#include "BossAnimInstance.h"
-#include "../Player/MainPlayerController.h"
-#include "../UI/MainViewportWidget.h"
+#include "AISpawnPoint.h"
+//#include "MonsterState.h"
+//#include "BossAnimInstance.h"
+//#include "../Player/MainPlayerController.h"
+//#include "../UI/MainViewportWidget.h"
 
 // Sets default values
 AAIPawn::AAIPawn()
@@ -55,6 +56,11 @@ void AAIPawn::ChangeAIAnimType(uint8 AnimType)
 void AAIPawn::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+void AAIPawn::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+
 }
 
 void AAIPawn::OnConstruction(const FTransform& Transform)

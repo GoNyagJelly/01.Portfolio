@@ -26,8 +26,4 @@ void UMonsterState::BeginPlay()
 		mHP = Data->mHPMax;
 		mAttackDistance = Data->mAttackDistance;
 	}
-
-	/*AMainPlayerController* Controller = GetWorld()->GetFirstPlayerController<AMainPlayerController>();
-
-	Controller->GetMainWidget()->SetBossHP(mHP, mHPMax);*/
 }

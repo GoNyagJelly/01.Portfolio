@@ -76,6 +76,13 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		}
 		return Z_Registration_Info_UEnum_EBossAnimType.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UBossAnimInstance::execAnimNotify_DeathEnd)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AnimNotify_DeathEnd();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UBossAnimInstance::execAnimNotify_BossAttackEnd)
 	{
 		P_FINISH;
@@ -96,6 +103,7 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AnimNotify_BossAttack", &UBossAnimInstance::execAnimNotify_BossAttack },
 			{ "AnimNotify_BossAttackEnd", &UBossAnimInstance::execAnimNotify_BossAttackEnd },
+			{ "AnimNotify_DeathEnd", &UBossAnimInstance::execAnimNotify_DeathEnd },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -143,6 +151,28 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "AI/BossAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UBossAnimInstance, nullptr, "AnimNotify_DeathEnd", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UBossAnimInstance);
 	UClass* Z_Construct_UClass_UBossAnimInstance_NoRegister()
 	{
@@ -177,6 +207,7 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_UBossAnimInstance_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttack, "AnimNotify_BossAttack" }, // 3550956475
 		{ &Z_Construct_UFunction_UBossAnimInstance_AnimNotify_BossAttackEnd, "AnimNotify_BossAttackEnd" }, // 3231095016
+		{ &Z_Construct_UFunction_UBossAnimInstance_AnimNotify_DeathEnd, "AnimNotify_DeathEnd" }, // 2191925366
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UBossAnimInstance_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -251,9 +282,9 @@ void EmptyLinkFunctionForGeneratedCodeBossAnimInstance() {}
 		{ EBossAnimType_StaticEnum, TEXT("EBossAnimType"), &Z_Registration_Info_UEnum_EBossAnimType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1656526928U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 24717425U) },
+		{ Z_Construct_UClass_UBossAnimInstance, UBossAnimInstance::StaticClass, TEXT("UBossAnimInstance"), &Z_Registration_Info_UClass_UBossAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UBossAnimInstance), 646153653U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_1957954981(TEXT("/Script/Souls"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_1203291001(TEXT("/Script/Souls"),
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Souls_Source_Souls_AI_BossAnimInstance_h_Statics::EnumInfo));
