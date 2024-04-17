@@ -30,7 +30,7 @@ void UBossHUDWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 	Super::NativeTick(MyGeometry, InDeltaTime);
 }
 
-void UBossHUDWidget::SetBossHP(int32 HP, int32 HPMax)
+void UBossHUDWidget::SetHP(int32 HP, int32 HPMax)
 {
 	mBossHPBar->SetPercent(HP / (float)HPMax);
 }

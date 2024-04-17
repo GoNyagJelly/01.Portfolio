@@ -89,6 +89,7 @@ void AAIBoss::Attack()
 	UMonsterState* State = GetState<UMonsterState>();
 
 	FVector StartLocation = GetActorLocation();
+
 	FVector EndLocation = StartLocation + GetActorForwardVector() * State->mAttackDistance;
 		
 	FHitResult	result;

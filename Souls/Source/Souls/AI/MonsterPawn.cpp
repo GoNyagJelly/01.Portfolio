@@ -3,8 +3,11 @@
 
 #include "MonsterPawn.h"
 #include "DefaultAIController.h"
+#include "../Player/MainPlayerController.h"
 #include "BossAnimInstance.h"
 #include "MonsterState.h"
+#include "../Player/MainPlayerController.h"
+#include "../UI/MainViewportWidget.h"
 
 UDataTable* AMonsterPawn::mMonsterDataTable = nullptr;
 
@@ -70,6 +73,8 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 	{
 		mAnimInst->ChangeAnimType(EBossAnimType::Death);
 	}
+
+	//GetController<AMainPlayerController>()->GetMainWidget()->SetBossHP(mMonsterState->mHP, mMonsterState->mHPMax);
 
 	return DamageAmount;
 }

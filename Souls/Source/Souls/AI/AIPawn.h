@@ -32,7 +32,7 @@ protected:
 	UFloatingPawnMovement* mMovement;
 
 	UPROPERTY(EditAnywhere)
-	class UAIState* mState;
+	class UMonsterState* mState;
 
 	bool	mBossAttackEnd;
 

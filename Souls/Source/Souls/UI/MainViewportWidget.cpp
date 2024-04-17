@@ -22,5 +22,5 @@ void UMainViewportWidget::SetMP(int32 MP, int32 MPMax)
 
 void UMainViewportWidget::SetBossHP(int32 HP, int32 HPMax)
 {
-	UI_BossHUD->SetBossHP(HP, HPMax);
+	UI_BossHUD->SetHP(HP, HPMax);
 }

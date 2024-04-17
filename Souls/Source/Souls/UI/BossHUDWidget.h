@@ -26,5 +26,5 @@ protected:
 	virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime);
 
 public:
-	void SetBossHP(int32 HP, int32 HPMax);
+	void SetHP(int32 HP, int32 HPMax);
 };
