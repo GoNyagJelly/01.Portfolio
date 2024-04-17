@@ -74,7 +74,7 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 		mAnimInst->ChangeAnimType(EBossAnimType::Death);
 	}
 
-	//GetController<AMainPlayerController>()->GetMainWidget()->SetBossHP(mMonsterState->mHP, mMonsterState->mHPMax);
+	GetWorld()->GetFirstPlayerController<AMainPlayerController>()->GetMainWidget()->SetBossHP(mMonsterState->mHP, mMonsterState->mHPMax);
 
 	return DamageAmount;
 }

@@ -8,6 +8,7 @@
 /NODEFAULTLIB
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\SoulsEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\Module.Souls.cpp.obj"
+"D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\AIBoss.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\AIPawn.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\MonsterPawn.cpp.obj"
 "D:\Portfolio\Souls\Intermediate\Build\Win64\x64\UnrealEditor\Development\Souls\BossHUDWidget.cpp.obj"

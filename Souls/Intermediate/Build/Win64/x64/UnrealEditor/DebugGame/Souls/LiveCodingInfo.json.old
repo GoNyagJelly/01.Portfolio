@@ -2,8 +2,6 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Souls.cpp.obj": [
-			"AIBoss.gen.cpp.obj",
-			"AIPawn.gen.cpp.obj",
 			"AISpawnPoint.gen.cpp.obj",
 			"AIState.gen.cpp.obj",
 			"BasicInputDataConfig.gen.cpp.obj",
@@ -19,22 +17,18 @@
 			"MainPlayerController.gen.cpp.obj",
 			"MainPlayerState.gen.cpp.obj",
 			"MainViewportWidget.gen.cpp.obj",
-			"MonsterPawn.gen.cpp.obj",
 			"MonsterState.gen.cpp.obj",
 			"PlayerAnimInstance.gen.cpp.obj",
 			"PlayerCharacter.gen.cpp.obj",
 			"PlayerHUDWidget.gen.cpp.obj",
-			"Souls.init.gen.cpp.obj",
 			"AIBoss.cpp.obj",
 			"BTService_DetectTarget.cpp.obj",
 			"BTTask_Attack.cpp.obj",
 			"BTTask_TraceTarget.cpp.obj",
-			"AIPawn.cpp.obj",
 			"AISpawnPoint.cpp.obj",
 			"AIState.cpp.obj",
 			"BossAnimInstance.cpp.obj",
 			"DefaultAIController.cpp.obj",
-			"MonsterPawn.cpp.obj",
 			"MonsterState.cpp.obj",
 			"EffectBase.cpp.obj",
 			"GameInfo.cpp.obj",
@@ -45,9 +39,15 @@
 			"PlayerAnimInstance.cpp.obj",
 			"PlayerCharacter.cpp.obj",
 			"Souls.cpp.obj",
+			"PlayerHUDWidget.cpp.obj",
+			"AIBoss.gen.cpp.obj",
+			"AIPawn.gen.cpp.obj",
+			"MonsterPawn.gen.cpp.obj",
+			"Souls.init.gen.cpp.obj",
+			"AIPawn.cpp.obj",
+			"MonsterPawn.cpp.obj",
 			"BossHUDWidget.cpp.obj",
-			"MainViewportWidget.cpp.obj",
-			"PlayerHUDWidget.cpp.obj"
+			"MainViewportWidget.cpp.obj"
 		]
 	}
 }
