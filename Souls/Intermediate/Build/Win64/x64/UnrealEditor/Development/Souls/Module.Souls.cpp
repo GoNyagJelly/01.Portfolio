@@ -31,6 +31,7 @@
 #include "D:/Portfolio/Souls/Source/Souls/AI/AIState.cpp"
 #include "D:/Portfolio/Souls/Source/Souls/AI/BossAnimInstance.cpp"
 #include "D:/Portfolio/Souls/Source/Souls/AI/DefaultAIController.cpp"
+#include "D:/Portfolio/Souls/Source/Souls/AI/MonsterPawn.cpp"
 #include "D:/Portfolio/Souls/Source/Souls/AI/MonsterState.cpp"
 #include "D:/Portfolio/Souls/Source/Souls/Effect/EffectBase.cpp"
 #include "D:/Portfolio/Souls/Source/Souls/GameInfo.cpp"
