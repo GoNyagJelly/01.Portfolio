@@ -24,3 +24,15 @@ void UMainViewportWidget::SetBossHP(int32 HP, int32 HPMax)
 {
 	UI_BossHUD->SetHP(HP, HPMax);
 }
+
+void UMainViewportWidget::ShowBossHP()
+{
+	UI_BossHUD->SetVisibility(ESlateVisibility::Visible);
+}
+
+void UMainViewportWidget::NativeOnInitialized()
+{
+	Super::NativeOnInitialized();
+
+	UI_BossHUD->SetVisibility(ESlateVisibility::Hidden);
+}

@@ -4,6 +4,8 @@
 #include "PlayerAnimInstance.h"
 #include "PlayerCharacter.h"
 #include "MainPlayerController.h"
+#include "MainPlayerState.h"
+#include "../UI/MainViewportWidget.h"
 
 void UPlayerAnimInstance::NativeInitializeAnimation()
 {
@@ -150,6 +152,15 @@ void UPlayerAnimInstance::PlayDeathMontage()
 	APlayerCharacter* PlayerCharacter = Cast<APlayerCharacter>(TryGetPawnOwner());
 
 	PlayerCharacter->Death();
+
+	mNormalAttackEnable = false;
+	mCanJump = false;
+
+	AMainPlayerController* PlayerController = TryGetPawnOwner()->GetController<AMainPlayerController>();
+	if (IsValid(PlayerController))
+	{
+		PlayerController->mMoveEnable = false;
+	}
 }
 
 void UPlayerAnimInstance::AnimNotify_PowerAttack()
@@ -227,6 +238,17 @@ void UPlayerAnimInstance::AnimNotify_RollStart()
 		PlayerController->mJumpEnable = false;
 		PlayerController->mPowerAttackEnable = false;
 	}
+
+	mState = Cast<AMainPlayerState>(TryGetPawnOwner()->GetPlayerState());
+
+	mState->mMP -= 10;
+
+	if (mState->mMP <= 0)
+	{
+		mState->mMP = 0;
+	}
+
+	GetWorld()->GetFirstPlayerController<AMainPlayerController>()->GetMainWidget()->SetMP(mState->mMP, mState->mMPMax);
 }
 
 void UPlayerAnimInstance::AnimNotify_RollEnd()

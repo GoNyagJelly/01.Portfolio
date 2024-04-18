@@ -64,9 +64,9 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 {
 	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent,
 		EventInstigator, DamageCauser);
-
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
 	
+	GetWorld()->GetFirstPlayerController<AMainPlayerController>()->GetMainWidget()->ShowBossHP();
+
 	mMonsterState->mHP -= DamageAmount;
 
 	if (mMonsterState->mHP <= 0)

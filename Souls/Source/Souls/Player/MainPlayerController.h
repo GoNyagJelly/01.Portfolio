@@ -20,6 +20,7 @@ public:
 private:
 	TSubclassOf<UUserWidget>	mMainWidgetClass;
 	class UMainViewportWidget* mMainWidget;
+	class UBossHUDWidget* mBossWidget;
 	float	mMoveDir;
 
 public:

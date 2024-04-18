@@ -63,6 +63,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float	mAdditiveAlpha;
 
+	class AMainPlayerState* mState;
 public:
 	UPlayerAnimInstance();
 

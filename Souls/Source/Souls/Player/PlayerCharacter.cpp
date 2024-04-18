@@ -41,6 +41,7 @@ void APlayerCharacter::BeginPlay()
 	mAnimInst = Cast<UPlayerAnimInstance>(GetMesh()->GetAnimInstance());
 
 	mState = GetPlayerState<AMainPlayerState>();
+
 }
 
 // Called every frame
@@ -60,8 +61,6 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
-
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Dmg:%.2f"), DamageAmount));
 
 	int32 Dmg = DamageAmount - mState->mArmorPoint;
 
@@ -102,14 +101,14 @@ void APlayerCharacter::PlayJump()
 
 void APlayerCharacter::PlayRollMontage()
 {
-	mState->mMP -= 10;
+	/*State->mMP -= 10;
 
 	if (mState->mMP <= 0)
 	{
 		mState->mMP = 0;
 	}
 
-	GetController<AMainPlayerController>()->GetMainWidget()->SetMP(mState->mMP, mState->mMPMax);
+	GetController<AMainPlayerController>()->GetMainWidget()->SetMP(mState->mMP, mState->mMPMax);*/
 	if (mState->mMP >= 10)
 	{
 		mAnimInst->PlayRollMontage();
