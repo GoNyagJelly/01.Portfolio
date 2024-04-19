@@ -66,7 +66,7 @@ float APlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 
 	Dmg = Dmg < 1 ? 1 : Dmg;
 
-	mState->mHP -= DamageAmount;
+	mState->mHP -= Dmg;
 
 	if (mState->mHP <= 0)
 	{

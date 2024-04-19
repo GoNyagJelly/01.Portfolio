@@ -67,10 +67,16 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 	
 	GetWorld()->GetFirstPlayerController<AMainPlayerController>()->GetMainWidget()->ShowBossHP();
 
-	mMonsterState->mHP -= DamageAmount;
+	int32 Dmg = DamageAmount - mMonsterState->mArmorPoint;
+
+	Dmg = Dmg < 1 ? 1 : Dmg;
+
+	mMonsterState->mHP -= Dmg;
 
 	if (mMonsterState->mHP <= 0)
 	{
+		mMonsterState->mHP = 0;
+
 		mAnimInst->ChangeAnimType(EBossAnimType::Death);
 	}
 

@@ -39,15 +39,15 @@
 			"GameInfo.cpp.obj",
 			"MainGameModeBase.cpp.obj",
 			"BasicInputDataConfig.cpp.obj",
+			"MainPlayerController.cpp.obj",
 			"MainPlayerState.cpp.obj",
 			"PlayerAnimInstance.cpp.obj",
+			"PlayerCharacter.cpp.obj",
 			"Souls.cpp.obj",
 			"BossHUDWidget.cpp.obj",
+			"MainViewportWidget.cpp.obj",
 			"PlayerHUDWidget.cpp.obj",
-			"MonsterPawn.cpp.obj",
-			"MainPlayerController.cpp.obj",
-			"PlayerCharacter.cpp.obj",
-			"MainViewportWidget.cpp.obj"
+			"MonsterPawn.cpp.obj"
 		]
 	}
 }
