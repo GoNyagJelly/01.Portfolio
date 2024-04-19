@@ -96,13 +96,6 @@ void UBTTask_TraceTarget::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 
 	float Distance = FVector::Distance(AILocation, TargetLocation);
 
-	/*Distance -= Pawn->GetCapsuleRadius();
-
-	if (IsValid(TargetCapsule))
-	{
-		Distance -= TargetCapsule->GetScaledCapsuleRadius();
-	}*/
-
 	UMonsterState* State = Pawn->GetState<UMonsterState>();
 
 	if (Distance <= State -> mAttackDistance)

@@ -42,9 +42,7 @@ void UBossAnimInstance::AnimNotify_BossAttackEnd()
 
 void UBossAnimInstance::AnimNotify_DeathEnd()
 {
-	APawn* OwnerPawn = TryGetPawnOwner();
-	if (OwnerPawn)
-	{
-		OwnerPawn->Destroy();
-	}
+	AMonsterPawn* Pawn = Cast<AMonsterPawn>(TryGetPawnOwner());
+
+	Pawn->OnDissolve();
 }

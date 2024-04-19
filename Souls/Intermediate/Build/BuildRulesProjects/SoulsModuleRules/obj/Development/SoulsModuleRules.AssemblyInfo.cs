@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoulsModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7152e7a2d173df6e63943248b8cb6c16d5e803d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoulsModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoulsModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

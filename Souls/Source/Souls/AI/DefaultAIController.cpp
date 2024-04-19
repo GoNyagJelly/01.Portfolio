@@ -2,6 +2,7 @@
 
 
 #include "DefaultAIController.h"
+#include "MonsterPawn.h"
 
 ADefaultAIController::ADefaultAIController()
 {
@@ -34,4 +35,18 @@ void ADefaultAIController::OnPossess(APawn* InPawn)
 void ADefaultAIController::OnUnPossess()
 {
 	Super::OnUnPossess();
+}
+
+void ADefaultAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	AMonsterPawn* ControlledPawn = Cast<AMonsterPawn>(GetPawn());
+	if (ControlledPawn)
+	{
+		if (ControlledPawn->IsDie)
+		{
+			StopMovement();
+		}
+	}
 }

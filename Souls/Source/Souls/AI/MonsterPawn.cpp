@@ -30,6 +30,14 @@ AMonsterPawn::AMonsterPawn()
 
 	if (!IsValid(mMonsterDataTable) && MonsterTable.Succeeded())
 		mMonsterDataTable = MonsterTable.Object;
+
+	mDissolveEnable = false;
+	mDissolve = 1.5f;
+
+	mDissolveDuration = 1.f;
+	mDissolveTime = 0.f;
+
+	IsDie = false;
 }
 
 void AMonsterPawn::ChangeAIAnimType(uint8 AnimType)
@@ -53,17 +61,42 @@ void AMonsterPawn::OnConstruction(const FTransform& Transform)
 	Super::OnConstruction(Transform);
 
 	mState->mDataTableRowName = mTableRowName;
+
+	int32	ElementCount = mMesh->GetNumMaterials();
+
+	for (int32 i = 0; i < ElementCount; ++i)
+	{
+		UMaterialInstanceDynamic* Mtrl = mMesh->CreateDynamicMaterialInstance(i);
+
+		mMaterialArray.Add(Mtrl);
+	}
 }
 
 void AMonsterPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (mDissolveEnable)
+	{
+		mDissolveTime += DeltaTime;
+
+		float Ratio = mDissolveTime / mDissolveDuration;
+
+		mDissolve = 1.5f - 2.5f * Ratio;
+
+		for (auto Mtrl : mMaterialArray)
+		{
+			Mtrl->SetScalarParameterValue(TEXT("Dissolve"), mDissolve);
+		}
+
+		if (mDissolve <= -1.f)
+			Destroy();
+	}
 }
 
 float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent,
-		EventInstigator, DamageCauser);
+	DamageAmount = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	
 	GetWorld()->GetFirstPlayerController<AMainPlayerController>()->GetMainWidget()->ShowBossHP();
 
@@ -76,6 +109,8 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 	if (mMonsterState->mHP <= 0)
 	{
 		mMonsterState->mHP = 0;
+		
+		IsDie = true;
 
 		mAnimInst->ChangeAnimType(EBossAnimType::Death);
 	}
@@ -87,4 +122,14 @@ float AMonsterPawn::TakeDamage(float DamageAmount, FDamageEvent const& DamageEve
 
 void AMonsterPawn::Attack()
 {
+}
+
+void AMonsterPawn::OnDissolve()
+{
+	mDissolveEnable = true;
+
+	for (auto Mtrl : mMaterialArray)
+	{
+		Mtrl->SetScalarParameterValue(TEXT("DissolveEnable"), 1.f);
+	}
 }

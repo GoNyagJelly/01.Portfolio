@@ -49,6 +49,15 @@ protected:
 	class UBossAnimInstance* mAnimInst;
 	FString	mTableRowName;
 	class UMonsterState* mMonsterState;
+	TArray<UMaterialInstanceDynamic*> mMaterialArray;
+
+	bool	mDissolveEnable;
+	float	mDissolve;
+	float	mDissolveTime;
+	float	mDissolveDuration;
+
+public:
+	bool	IsDie;
 
 public:
 	virtual void ChangeAIAnimType(uint8 AnimType);
@@ -66,4 +75,6 @@ public:
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser);
 
 	virtual void Attack();
+
+	void OnDissolve();
 };
