@@ -42,12 +42,12 @@
 			"MainPlayerController.cpp.obj",
 			"MainPlayerState.cpp.obj",
 			"PlayerAnimInstance.cpp.obj",
-			"PlayerCharacter.cpp.obj",
 			"Souls.cpp.obj",
 			"BossHUDWidget.cpp.obj",
 			"MainViewportWidget.cpp.obj",
 			"PlayerHUDWidget.cpp.obj",
-			"MonsterPawn.cpp.obj"
+			"MonsterPawn.cpp.obj",
+			"PlayerCharacter.cpp.obj"
 		]
 	}
 }
