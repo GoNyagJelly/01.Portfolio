@@ -43,12 +43,6 @@ AAIBoss::AAIBoss()
 	mRightWeaponCapsule->AttachToComponent(mMesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("FX_Clang_R"));
 	mLeftWeaponCapsule->AttachToComponent(mMesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale, TEXT("FX_Clang_L"));
 
-	/*mRightWeaponCapsule->SetNotifyRigidBodyCollision(true);
-	mLeftWeaponCapsule->SetNotifyRigidBodyCollision(true);
-
-	mRightWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);
-	mLeftWeaponCapsule->OnComponentHit.AddDynamic(this, &AAIBoss::Attack);*/
-
 	mTableRowName = TEXT("Boss");
 }
 
@@ -61,26 +55,6 @@ void AAIBoss::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
-
-//void AAIBoss::Attack(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-//{
-//	if (OtherActor && (OtherActor != this) && OtherComp)
-//	{
-//		FDamageEvent	DmgEvent;
-//		FHitResult	result;
-//
-//		result.GetActor()->TakeDamage(20.f, DmgEvent, GetController(), this);
-//
-//		FActorSpawnParameters SpawnParam;
-//		
-//		SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-//		
-//		AEffectBase* Effect = GetWorld()->SpawnActor<AEffectBase>(result.ImpactPoint, result.ImpactNormal.Rotation(), SpawnParam);
-//		
-//		Effect->SetParticleAsset(TEXT("/Script/Engine.ParticleSystem'/Game/ParagonGrux/FX/Particles/Skins/Grux_Beetle_Magma/P_Grux_Magma_Melee_Impact.P_Grux_Magma_Melee_Impact'"));
-//		Effect->SetSoundAsset(TEXT("/Script/Engine.SoundWave'/Game/ParagonKwang/Characters/Heroes/Kwang/Sounds/SoundWaves/Kwang_Effort_Pain_01.Kwang_Effort_Pain_01'"));
-//	}
-//}
 
 void AAIBoss::Attack()
 {
@@ -95,13 +69,13 @@ void AAIBoss::Attack()
 	FHitResult	result;
 	bool IsCollision = GetWorld()->SweepSingleByChannel(result, StartLocation, EndLocation, FQuat::Identity, ECC_GameTraceChannel3, FCollisionShape::MakeSphere(100.f), param);
 		
-#if ENABLE_DRAW_DEBUG
-		
-	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
-		
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
-		
-#endif*/
+//#if ENABLE_DRAW_DEBUG
+//		
+//	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
+//		
+//	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 100.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+//		
+//#endif
 
 	if (IsCollision)
 	{

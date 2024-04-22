@@ -91,6 +91,7 @@ void AMonsterPawn::Tick(float DeltaTime)
 
 		if (mDissolve <= -1.f)
 			Destroy();
+
 	}
 }
 

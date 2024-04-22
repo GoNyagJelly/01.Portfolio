@@ -101,14 +101,6 @@ void APlayerCharacter::PlayJump()
 
 void APlayerCharacter::PlayRollMontage()
 {
-	/*State->mMP -= 10;
-
-	if (mState->mMP <= 0)
-	{
-		mState->mMP = 0;
-	}
-
-	GetController<AMainPlayerController>()->GetMainWidget()->SetMP(mState->mMP, mState->mMPMax);*/
 	if (mState->mMP >= 10)
 	{
 		mAnimInst->PlayRollMontage();
@@ -128,13 +120,13 @@ void APlayerCharacter::NormalAttack()
 	TArray<FHitResult>	resultArray;
 	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
 
-#if ENABLE_DRAW_DEBUG
-
-	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
-
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
-
-#endif
+//#if ENABLE_DRAW_DEBUG
+//
+//	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
+//
+//	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+//
+//#endif
 
 	if (IsCollision)
 	{
@@ -169,13 +161,13 @@ void APlayerCharacter::PowerAttack()
 	TArray<FHitResult>	resultArray;
 	bool IsCollision = GetWorld()->SweepMultiByChannel(resultArray, StartLocation, EndLocation, FQuat::Identity, ECollisionChannel::ECC_EngineTraceChannel4, FCollisionShape::MakeSphere(50.f), param);
 
-#if ENABLE_DRAW_DEBUG
-
-	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
-
-	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
-
-#endif
+//#if ENABLE_DRAW_DEBUG
+//
+//	FColor DrawColor = IsCollision ? FColor::Red : FColor::Green;
+//
+//	DrawDebugCapsule(GetWorld(), (StartLocation + EndLocation) / 2.f, State->mAttackDistance / 2.f, 50.f, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 1.f);
+//
+//#endif
 
 	if (IsCollision)
 	{

@@ -1,0 +1,17 @@
+Log started at 04/22/2024 11:08:27 (2024-04-22T02:08:27Z)
+No config file at C:\Users\AR student\Documents\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Configuration will be read from:
+  C:\Users\AR student\AppData\Roaming\Unreal Engine\UnrealBuildTool\BuildConfiguration.xml
+Log file: D:\Portfolio\Souls\Saved\Logs\UnrealVersionSelector-2024.04.22-11.08.27.log
+
+Setting temp directory to 'C:\Users\AR student\AppData\Local\Temp\UnrealBuildTool\319625c3'
+A conflicting instance of UnrealBuildTool is already running.
+BuildException: A conflicting instance of UnrealBuildTool is already running.
+   at UnrealBuildTool.SingleInstanceMutex..ctor(String MutexName, Boolean bWaitMutex) in C:\Program Files\Epic Games\UE_5.3\Engine\Source\Programs\UnrealBuildTool\System\SingleInstanceMutex.cs:line 45
+   at UnrealBuildTool.UnrealBuildTool.Main(String[] ArgumentsArray) in C:\Program Files\Epic Games\UE_5.3\Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.cs:line 624
+WriteFileIfChanged() wrote 0 changed files of 0 requested writes.
+Timeline:
+
+[ 0.000]
+[ 0.000](+0.251) <unknown>
+[ 0.251]

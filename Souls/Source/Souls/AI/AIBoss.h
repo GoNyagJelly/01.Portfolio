@@ -34,10 +34,6 @@ public:
 
 	virtual void Attack();
 
-//public:
-//	UFUNCTION()
-//	void Attack(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
 public:
 	void PlayBossAttackMontage();
 };
